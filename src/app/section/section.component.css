@@ -1,0 +1,56 @@
+.section {
+  height: 95vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(https://www.worldcommunitygrid.org/images/discover/backgrounds/s/scientists.jpg);
+  background-blend-mode: overlay;
+  background-color: #335a8a;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+  text-align: center;
+  color: white;
+}
+
+.h1 {
+  font-size: 18px;
+  line-height: 26px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; 
+}
+
+.section-content {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  position: relative;
+}
+
+.section-content__small-image-1 {
+  width: 50px;
+  position: absolute;
+  right: 45%;
+  top: 25%;
+}
+
+.section-content__small-image-2, .section-content__small-image-3, .section-content__small-image-4 {
+  width: 50px;
+  display: none;
+}
+
+.flipping__item--2, .flipping__item--3, .flipping__item--4 {
+  display: none;
+}
+
+.section-content__button {
+  background: #D54427;
+  color: white;
+  cursor: pointer;
+  border: none;
+  font-size: 18px;
+  line-height: 24px;
+  align-self: center;
+  padding: 7px;
+}
+
