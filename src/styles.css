@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+@media only screen and (max-width: 851px){
+
+}
+
+@media only screen and (max-width: 501px){
+  .logo-mark {
+    width:40px;
+    margin-left:10px;
+  }
+
+  .grid-logo{
+    display:none;
+  }
+
+  .ibm-logo {
+    width:45px;
+    border-left: 1px solid #b7b7b7;
+    margin: 0 0 3px 3px;
+    padding-left: 3px;
+  }
+
+}

@@ -1,8 +1,10 @@
 header{
   background-color:#DFE9E9;
   padding:0;
+  margin:-20px 0 0 0;
   font-size: 20px;
-  width: 100%;
+  width: 1280px;
+  height:auto;
 }
 
 .header{
@@ -11,7 +13,8 @@ header{
 }
 
 .logo-mark {
-  width:40px;
+  width:45px;
+  margin-left:10px;
 }
 
 .grid-logo {
@@ -19,8 +22,10 @@ header{
 }
 
 .ibm-logo {
-  width:60px;
+  width:65px;
   border-left: 1px solid #b7b7b7;
+  margin: 0 0 3px 5px;
+  padding-left: 5px;
 }
 
 .main-logos {
@@ -38,3 +43,24 @@ header{
 .login-info li{
   display: inline-block;
 }
+
+.login-info li{
+  margin-right:15px;
+}
+
+/*a.login-button:link,*/
+/*a.login-button:visited{*/
+/*  padding: 8px 0;*/
+/*  color: #D54427;*/
+/*  text-decoration: none;*/
+/*  font-weight:normal;*/
+/*  border-bottom: 0.1px solid #D54427;*/
+/*}*/
+
+/*a .join-button:link,*/
+/*a .join-button:visited {*/
+/*  padding: 10px 30px;*/
+/*  text-decoration: none;*/
+/*  border-radius: 200px;*/
+/*  transition: background-color 0.2s, border 0.2s, color 0.2s;*/
+/*}*/
