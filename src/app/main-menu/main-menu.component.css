@@ -1,17 +1,32 @@
 header{
   background-color:#DFE9E9;
-  padding:0 0 10px 0;
+  padding:0;
   font-size: 20px;
+  width: 100%;
 }
 
-img .logo {
-  width:50%;
-  height:50%;
+.header{
+  height:70px;
+  width:100%;
+}
+
+.logo-mark {
+  width:40px;
+}
+
+.grid-logo {
+  width:200px;
+}
+
+.ibm-logo {
+  width:60px;
+  border-left: 1px solid #b7b7b7;
 }
 
 .main-logos {
   list-style: none;
   float: left;
+  padding:0;
 }
 
 .login-info {
