@@ -1,0 +1,25 @@
+header{
+  background-color:#DFE9E9;
+  padding:0 0 10px 0;
+  font-size: 20px;
+}
+
+img .logo {
+  width:50%;
+  height:50%;
+}
+
+.main-logos {
+  list-style: none;
+  float: left;
+}
+
+.login-info {
+  list-style: none;
+  float: right;
+}
+
+.main-logos li,
+.login-info li{
+  display: inline-block;
+}
