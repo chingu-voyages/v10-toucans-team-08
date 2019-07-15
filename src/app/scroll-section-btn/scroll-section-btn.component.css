@@ -1,0 +1,36 @@
+.btn {
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  margin-left: -19px;
+}
+
+.bottom {
+  bottom: 150px;
+}
+
+.top {
+  bottom: inherit;
+  top: 50px;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+@media screen and (min-width: 800px) {
+  .btn {
+    font-size: 45px;
+    margin-left: -30px;
+  }
+}
+
+

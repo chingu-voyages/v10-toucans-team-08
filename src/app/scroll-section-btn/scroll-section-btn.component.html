@@ -1,1 +1,4 @@
-<p>scroll-section-btn works!</p>
+<button class="btn" [ngStyle]="{'color': color}"
+        [ngClass]="{top: positionButton === 'top', bottom: positionButton !== 'top', invisible: !visible}">
+  <fa-icon [icon]="iconButton"></fa-icon>
+</button>
