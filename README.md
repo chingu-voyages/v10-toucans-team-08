@@ -1,5 +1,5 @@
 # v10-toucans-team-08
-Website clone of https://www.worldcommunitygrid.org/ created by Mahtab, Kohki and Michiel using Angular | Voyage-10 | https://chingu.io/
+Website clone of [World Community Grid](https://www.worldcommunitygrid.org/discover.action) created by Mahtab, Kohki and Michiel using Angular | Voyage-10 | https://chingu.io/
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.0.
