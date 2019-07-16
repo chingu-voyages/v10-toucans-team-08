@@ -1,19 +1,3 @@
-.section {
-  height: 95vh;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url(https://www.worldcommunitygrid.org/images/discover/backgrounds/s/scientists.jpg);
-  background-blend-mode: overlay;
-  background-color: #335a8a;
-  background-size: cover;
-  background-position-x: center;
-  background-position-y: center;
-  text-align: center;
-  color: white;
-}
-
 .h1 {
   font-size: 18px;
   line-height: 26px;
@@ -23,8 +7,11 @@
 .section-content {
   display: flex;
   flex-direction: column;
-  width: 80%;
   position: relative;
+}
+
+.section-content__images {
+  margin-bottom: 36px;
 }
 
 .section-content__small-image-1 {
@@ -43,6 +30,14 @@
   display: none;
 }
 
+.section-content__text {
+  margin-bottom: 36px;
+}
+
+.section-content__text > p {
+  margin: 0px;
+}
+
 .section-content__button {
   background: #D54427;
   color: white;
@@ -51,6 +46,35 @@
   font-size: 18px;
   line-height: 24px;
   align-self: center;
-  padding: 7px;
+  padding: 3.6px 7px;
+  transition: all 0.2s ease;
 }
 
+.section-content__button:hover {
+  background: white;
+  color: #D54427;
+}
+
+@media (min-width: 500px) {
+  .h1 {
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .section-content__button {
+    font-size: 22px;
+    line-height: 28px;
+    padding: 4.4px 8.8px;
+  }
+
+  #laptop {
+    width: 410px;
+  }
+}
+
+@media (min-width: 850px) {
+  .h1 {
+    font-size: 42px;
+    line-height: 48px;
+  }
+}

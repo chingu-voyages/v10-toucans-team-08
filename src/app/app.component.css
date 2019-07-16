@@ -1,0 +1,13 @@
+.section {
+  height: 95vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+  text-align: center;
+  color: white;
+}
