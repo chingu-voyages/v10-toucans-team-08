@@ -10,6 +10,7 @@ header{
 .header{
   height:70px;
   width:100%;
+  box-shadow: 0 2px 2px #e3e3e3;
 }
 
 .logo-mark {
@@ -45,7 +46,7 @@ header{
 }
 
 .login-info li{
-  margin-right:15px;
+  margin-right:10px;
 }
 
 ul.login-info {
