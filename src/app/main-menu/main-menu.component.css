@@ -52,35 +52,41 @@ ul.login-info {
   margin-top:3px;
 }
 
+a.login-button:link,
+a.login-button:visited {
+  padding: 8px 0;
+  color: #e2745e;
+  text-decoration: none;
+  font-weight:normal;
+  border-bottom: 0.1px solid #D54427;
+  font-size: 17px;
+}
+
+a.login-button:hover,
+a.login-button:active {
+  padding: 8px 0;
+  color: #d54427;
+  text-decoration: none;
+  font-weight:normal;
+  border-bottom: 0.1px solid #D54427;
+  font-size: 17px;
+}
+
 li .join-button {
   background-color:#D54427;
   padding: 7px;
   text-decoration: none;
   color: #fff;
+  font-size: 17px;
 }
 
-a .join-button {
-  font-size: 10px;
-}
-
-a.login-button:link,
-a.login-button:visited {
-  padding: 8px 0;
-  color: #D54427;
+li .join-button:hover,
+li .join-button:active {
+  background-color:#fff;
+  padding: 7px;
   text-decoration: none;
-  font-weight:normal;
-  border-bottom: 0.1px solid #D54427;
-}
-
-a .join-button:link,
-a .join-button:visited {
-  color: #fff;
-  font-size: 12px;
-  /*padding: 8px 0;*/
-  /*background-color:#D54427;*/
-  /*text-decoration: none;*/
-  /*border-radius: 200px;*/
-  /*transition: background-color 0.2s, border 0.2s, color 0.2s;*/
+  color: #D54427;
+  font-size: 17px;
 }
 
 .closeButton {
