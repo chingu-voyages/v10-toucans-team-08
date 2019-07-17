@@ -1,9 +1,9 @@
 header{
   background-color:#DFE9E9;
-  padding:0;
-  margin:-20px 0 0 0;
+  padding:0 5px;
+  margin:-20px -10px 0 -10px;
   font-size: 20px;
-  width: 1280px;
+  width: auto;
   height:auto;
 }
 
@@ -48,19 +48,41 @@ header{
   margin-right:15px;
 }
 
-/*a.login-button:link,*/
-/*a.login-button:visited{*/
-/*  padding: 8px 0;*/
-/*  color: #D54427;*/
-/*  text-decoration: none;*/
-/*  font-weight:normal;*/
-/*  border-bottom: 0.1px solid #D54427;*/
-/*}*/
+ul.login-info {
+  margin-top:3px;
+}
 
-/*a .join-button:link,*/
-/*a .join-button:visited {*/
-/*  padding: 10px 30px;*/
-/*  text-decoration: none;*/
-/*  border-radius: 200px;*/
-/*  transition: background-color 0.2s, border 0.2s, color 0.2s;*/
-/*}*/
+li .join-button {
+  background-color:#D54427;
+  padding: 7px;
+  text-decoration: none;
+  color: #fff;
+}
+
+a .join-button {
+  font-size: 10px;
+}
+
+a.login-button:link,
+a.login-button:visited {
+  padding: 8px 0;
+  color: #D54427;
+  text-decoration: none;
+  font-weight:normal;
+  border-bottom: 0.1px solid #D54427;
+}
+
+a .join-button:link,
+a .join-button:visited {
+  color: #fff;
+  font-size: 12px;
+  /*padding: 8px 0;*/
+  /*background-color:#D54427;*/
+  /*text-decoration: none;*/
+  /*border-radius: 200px;*/
+  /*transition: background-color 0.2s, border 0.2s, color 0.2s;*/
+}
+
+.closeButton {
+  padding-top:20px;
+}
