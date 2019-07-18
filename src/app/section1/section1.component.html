@@ -290,12 +290,12 @@
     </svg>
   </div>
   <div class="section-content__text">
-    <p>
+    <p (click)="switch()">
       <span class="flipping"> 
-        <span class="h1 flipping__item flipping__item--1"> What if you could<br> <b>study bacteria</b><br> while tweeting? </span> 
-        <span class="h1 flipping__item flipping__item--2"> What if you could help<br> <b>treat childhood cancer</b><br> while watching video? </span> 
-        <span class="h1 flipping__item flipping__item--3"> What if you could help<br> <b>cure Zika</b><br> while listening to music? </span> 
-        <span class="h1 flipping__item flipping__item--4"> What if you could help<br> <b>treat HIV/AIDS</b><br> while posting a status update? </span> 
+        <span class="h1 flipping__item flipping__item--1" [@crossfade]="state1"> What if you could<br> <b>study bacteria</b><br> while tweeting? </span> 
+        <span class="h1 flipping__item flipping__item--2" [@crossfade]="state2"> What if you could help<br> <b>treat childhood cancer</b><br> while watching video? </span> 
+        <span class="h1 flipping__item flipping__item--3" [@crossfade]="state3"> What if you could help<br> <b>cure Zika</b><br> while listening to music? </span> 
+        <span class="h1 flipping__item flipping__item--4" [@crossfade]="state4"> What if you could help<br> <b>treat HIV/AIDS</b><br> while posting a status update? </span> 
       </span> 
     </p>
   </div>
