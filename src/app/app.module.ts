@@ -9,7 +9,6 @@ import { Icon1Component } from './icon1/icon1.component';
 import { Icon2Component } from './icon2/icon2.component';
 import { Icon3Component } from './icon3/icon3.component';
 import { Icon4Component } from './icon4/icon4.component';
-import { SafePipe } from './safe.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +18,6 @@ import { SafePipe } from './safe.pipe';
     Icon2Component,
     Icon3Component,
     Icon4Component,
-    SafePipe,
   ],
   imports: [
     BrowserModule,
