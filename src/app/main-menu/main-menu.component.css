@@ -7,54 +7,54 @@ header{
   height:auto;
 }
 
-.header{
+.block-header{
   height:70px;
   width:100%;
   box-shadow: 0 2px 2px #e3e3e3;
 }
 
-.logo-mark {
+.img--main-logo {
   width:45px;
   margin-left:10px;
 }
 
-.grid-logo {
+.img--grid-logo {
   width:200px;
 }
 
-.ibm-logo {
+.img--ibm-logo {
   width:65px;
   border-left: 1px solid #b7b7b7;
   margin: 0 0 3px 5px;
   padding-left: 5px;
 }
 
-.main-logos {
+.block-header__main-logos {
   list-style: none;
   float: left;
   padding:0;
 }
 
-.login-info {
+.block-header__login-info {
   list-style: none;
   float: right;
 }
 
-.main-logos li,
-.login-info li{
+.block-header__main-logos li,
+.block-header__login-info li{
   display: inline-block;
 }
 
-.login-info li{
-  margin-right:10px;
-}
-
-ul.login-info {
+ul.block-header__login-info {
   margin-top:3px;
 }
 
-a.login-button:link,
-a.login-button:visited {
+.block-header__login-info li{
+  margin-right:10px;
+}
+
+.a--login-button:link,
+.a--login-button:visited {
   padding: 8px 0;
   color: #e2745e;
   text-decoration: none;
@@ -63,8 +63,8 @@ a.login-button:visited {
   font-size: 17px;
 }
 
-a.login-button:hover,
-a.login-button:active {
+.a--login-button:hover,
+.a--login-button:active {
   padding: 8px 0;
   color: #d54427;
   text-decoration: none;
@@ -73,7 +73,7 @@ a.login-button:active {
   font-size: 17px;
 }
 
-li .join-button {
+.a--join-button {
   background-color:#D54427;
   padding: 7px;
   text-decoration: none;
@@ -81,8 +81,8 @@ li .join-button {
   font-size: 17px;
 }
 
-li .join-button:hover,
-li .join-button:active {
+.a--join-button:hover,
+.a--join-button:active {
   background-color:#fff;
   padding: 7px;
   text-decoration: none;
