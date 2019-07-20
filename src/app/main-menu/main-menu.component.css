@@ -15,17 +15,22 @@ header{
 
 .img--main-logo {
   width:45px;
-  margin-left:10px;
+  margin: 0 0 15px 10px;
+}
+
+.img--main-white-logo{
+  display:none;
 }
 
 .img--grid-logo {
   width:200px;
+  margin-bottom:15px;
 }
 
 .img--ibm-logo {
   width:65px;
   border-left: 1px solid #b7b7b7;
-  margin: 0 0 3px 5px;
+  margin: 0 0 17px 7px;
   padding-left: 5px;
 }
 
@@ -89,6 +94,79 @@ ul.block-header__login-info {
   color: #D54427;
   font-size: 17px;
 }
+
+@media only screen and (max-width: 851px){
+  .img--main-logo{
+    display:none;
+  }
+
+  .img--grid-logo{
+    display:none;
+  }
+
+  .img--main-white-logo{
+    display:block;
+    width: 42px;
+    margin: 0 0 1px 12px;
+  }
+
+  .img--ibm-logo{
+    margin-bottom:3px;
+  }
+}
+
+@media only screen and (max-width: 501px) {
+  .img--main-white-logo {
+    width: 30px;
+    margin: 0 0 -5px 10px;
+  }
+
+  .img--ibm-logo {
+    width: 65px;
+    border-left: 1px solid #b7b7b7;
+    margin: 0 0 -9px 5px;
+    padding-left: 5px;
+  }
+
+  .a--login-button:link,
+  .a--login-button:visited {
+    padding: 8px 0;
+    color: #e2745e;
+    text-decoration: none;
+    font-weight: normal;
+    border-bottom: 0.1px solid #D54427;
+    font-size: 14px;
+  }
+
+  .a--login-button:hover,
+  .a--login-button:active {
+    padding: 8px 0;
+    color: #d54427;
+    text-decoration: none;
+    font-weight: normal;
+    border-bottom: 0.1px solid #D54427;
+    font-size: 14px;
+  }
+
+  .a--join-button {
+    background-color: #D54427;
+    padding: 7px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+  }
+
+  .a--join-button:hover,
+  .a--join-button:active {
+    background-color: #fff;
+    padding: 7px;
+    text-decoration: none;
+    color: #D54427;
+    font-size: 14px;
+  }
+}
+
+
 
 .closeButton {
   padding-top:20px;
