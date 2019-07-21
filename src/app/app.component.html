@@ -1,17 +1,8 @@
-
-
+<app-main-menu></app-main-menu>
 <section class="section" [style.backgroundImage]="'url(/assets/background-1.jpg)'" [style.backgroundColor]="'#335a8a'">
   <app-section1></app-section1>
 </section>
 <section class="section" [style.backgroundImage]="'url(/assets/background-2.jpg)'" [style.backgroundColor]="'#FDD500'">
-
 </section>
-
-<main class="wrapper">
-  <!--Embedding button component with color, position & visibility option -->
-  <app-scroll-section-btn [color]="buttonColor" [positionButton]="positionButton"
-                          [visible]="buttonVisibleOnSection"></app-scroll-section-btn>
-</main>
-
-<app-main-menu></app-main-menu>
-<router-outlet></router-outlet>
+<app-scroll-section-btn [color]="buttonColor" [positionButton]="positionButton"
+                        [visible]="buttonVisibleOnSection"></app-scroll-section-btn>
