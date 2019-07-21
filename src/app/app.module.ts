@@ -5,11 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ScrollSectionBtnComponent } from './scroll-section-btn/scroll-section-btn.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import { MainMenuComponent } from './main-menu/main-menu.component';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
     AppComponent,
     ScrollSectionBtnComponent
+    AppComponent,
+    MainMenuComponent
   ],
   imports: [
     BrowserModule,
