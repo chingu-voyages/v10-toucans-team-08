@@ -1,0 +1,9 @@
+#laptop {
+  width: 221.95px;
+}
+
+@media (min-width: 500px) { 
+  #laptop {
+    width: 410px;
+  }
+ }
