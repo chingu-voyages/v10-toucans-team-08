@@ -21,12 +21,11 @@ export class Section1Component implements OnInit {
   title3 = ` What if you could help<br> <b>cure Zika</b><br> while listening to music? `;
   title4 = ` What if you could help<br> <b>treat HIV/AIDS</b><br> while posting a status update? `;
   title = this.title1;
-  icon1 = `<app-icon1 class="section-content__small-image-1"></app-icon1>`;
-  icon2 = `<app-icon2 class="section-content__small-image-1"></app-icon2>`;
-  icon3 = `<app-icon3 class="section-content__small-image-1"></app-icon3>`;
-  icon4 = `<app-icon4 class="section-content__small-image-1"></app-icon4>`;
-  icon = this.icon1;
-
+  icon1 = true;
+  icon2 = false;
+  icon3 = false;
+  icon4 = false;
+   
   ngOnInit(): void {
   }
 
@@ -34,20 +33,20 @@ export class Section1Component implements OnInit {
     if (this.state === 'hide') {
       if (this.title === this.title1) {
         this.title = this.title2;
-        this.icon = this.icon2;
-        console.log(this.icon);
+        this.icon1 = false;
+        this.icon2 = true;
       } else if (this.title === this.title2) {
         this.title = this.title3;
-        this.icon = this.icon3;
-        console.log(this.icon);
+        this.icon2 = false;
+        this.icon3 = true;
       } else if (this.title === this.title3) {
         this.title = this.title4;
-        this.icon = this.icon4;
-        console.log(this.icon);
+        this.icon3 = false;
+        this.icon4 = true;
       } else if (this.title === this.title4) {
         this.title = this.title1;
-        this.icon = this.icon1;
-        console.log(this.icon);
+        this.icon4 = false;
+        this.icon1 = true;
       }
     }
   }

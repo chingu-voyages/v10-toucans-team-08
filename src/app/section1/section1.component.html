@@ -1,12 +1,12 @@
 <div class="section-content">
   <div class="section-content__images">
     <app-icon id="laptop"></app-icon>
-    <!-- <div [@crossfade]="state">
-        <app-icon1 class="section-content__small-image-1"></app-icon1>
-        <app-icon2 class="section-content__small-image-2"></app-icon2>
-        <app-icon3 class="section-content__small-image-3"></app-icon3>
-        <app-icon4 class="section-content__small-image-4"></app-icon4>
-    </div> -->
+    <div [@crossfade]="state">
+        <app-icon1 class="section-content__small-image-1" [hidden]="!icon1"></app-icon1>
+        <app-icon2 class="section-content__small-image-2" [hidden]="!icon2"></app-icon2>
+        <app-icon3 class="section-content__small-image-3" [hidden]="!icon3"></app-icon3>
+        <app-icon4 class="section-content__small-image-4" [hidden]="!icon4"></app-icon4>
+    </div>
   </div>
   <div class="section-content__text">
     <p>
