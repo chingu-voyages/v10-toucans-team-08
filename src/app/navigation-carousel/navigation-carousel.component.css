@@ -1,0 +1,30 @@
+.navigation {
+  position: fixed;
+  left: 12px;
+  top: 210px;
+}
+
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  border: 2px solid white;
+  border-radius: 100%;
+  padding: 4px;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  margin-top: 36px;
+}
+
+li:hover {
+    background-color: white;
+}
+
+li.active {
+  background-color: white;
+}
+
+

@@ -13,6 +13,7 @@ import {IconComponent} from './icon/icon.component';
 import {ScrollSectionBtnComponent} from './scroll-section-btn/scroll-section-btn.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {MainMenuComponent} from './main-menu/main-menu.component';
+import { NavigationCarouselComponent } from './navigation-carousel/navigation-carousel.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {MainMenuComponent} from './main-menu/main-menu.component';
     IconComponent,
     AppComponent,
     ScrollSectionBtnComponent,
-    MainMenuComponent
+    MainMenuComponent,
+    NavigationCarouselComponent
   ],
   imports: [
     BrowserModule,
