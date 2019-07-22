@@ -1,1 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+/*scroll behavior for scrolling sections in tha main page*/
+html {
+  scroll-behavior: smooth;
+}

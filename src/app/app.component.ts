@@ -17,4 +17,8 @@ export class AppComponent {
     this.buttonColor = currentPos === 2 || currentPos === 6 || currentPos === 7 ? Colors.BLACK : Colors.WHITE;
     this.buttonVisibleOnSection = !(currentPos === 3 || currentPos === 8);
   }*/
+
+  public scrollDown(scrollDimension) {
+    window.scrollBy(0, scrollDimension);
+  }
 }
