@@ -8,14 +8,15 @@ header{
 }
 
 .block-header{
-  height:70px;
+  height:65px;
   width:100%;
   box-shadow: 0 2px 2px #e3e3e3;
 }
 
 .img--main-logo {
-  width:45px;
-  margin: 0 0 15px 10px;
+  width:44px;
+  margin: 0;
+  padding: 16px 0 0 10px;
 }
 
 .img--main-white-logo{
@@ -24,20 +25,23 @@ header{
 
 .img--grid-logo {
   width:200px;
-  margin-bottom:15px;
+  margin: 0;
+  padding: 23px 0 0 2px;
 }
 
 .img--ibm-logo {
   width:65px;
+  height:37px;
   border-left: 1px solid #b7b7b7;
-  margin: 0 0 17px 7px;
-  padding-left: 5px;
+  margin: 0 0 0 10px;
+  padding:0 0 2px 8px;
 }
 
 .block-header__main-logos {
   list-style: none;
   float: left;
   padding:0;
+  margin:0;
 }
 
 .block-header__login-info {
@@ -106,26 +110,29 @@ ul.block-header__login-info {
 
   .img--main-white-logo{
     display:block;
-    width: 42px;
-    margin: 0 0 1px 12px;
+    width:41px;
+    margin: 0 5px 0 0;
+    padding:24px 0 0 13px;
   }
 
   .img--ibm-logo{
-    margin-bottom:3px;
+    margin:8px 0 0 5px;
+    padding: 0 0 0 5px;
+
   }
 }
 
 @media only screen and (max-width: 501px) {
   .img--main-white-logo {
-    width: 30px;
-    margin: 0 0 -5px 10px;
+    width:30px;
+    padding:0 0 3px 10px;
   }
 
   .img--ibm-logo {
     width: 65px;
     border-left: 1px solid #b7b7b7;
-    margin: 0 0 -9px 5px;
-    padding-left: 5px;
+    margin:23px 0 0 0;
+    padding: 0 0 0 5px;
   }
 
   .a--login-button:link,
