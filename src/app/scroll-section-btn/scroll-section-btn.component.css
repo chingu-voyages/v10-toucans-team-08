@@ -1,7 +1,7 @@
 .btn {
   background-color: transparent;
+  font-size: 35px;
   border: none;
-  font-size: 24px;
   cursor: pointer;
   position: fixed;
   bottom: 50px;
@@ -10,7 +10,7 @@
 }
 
 .bottom {
-  bottom: 150px;
+  bottom: 20px;
 }
 
 .top {
@@ -26,9 +26,9 @@
   visibility: hidden;
 }
 
-@media screen and (min-width: 800px) {
+@media (min-width: 501px) {
   .btn {
-    font-size: 45px;
+    font-size: 50px;
     margin-left: -30px;
   }
 }
