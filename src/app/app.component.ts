@@ -1,20 +1,47 @@
 import {Component} from '@angular/core';
 import {Colors, PositionOfButton} from './scroll-section-btn/scroll-section-btn.component';
 
+enum SectionId {
+  SECTIONONE = 'sectionOne',
+  SECTIONTWO = 'sectionTwo',
+  SECTIONTHREE = 'sectionThree',
+  SECTIONFOUR = 'sectionFour',
+  SECTIONFIVE = 'sectionFive',
+  SECTIONSIX = 'sectionSix',
+  SECTIONSEVEN = 'sectionSeventh',
+  SECTIONEIGHT = 'sectionEight'
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
+  public sectionId = SectionId;
+  public positionOfView: SectionId = SectionId.SECTIONONE;
   buttonColor: Colors = Colors.WHITE;
   positionButton: PositionOfButton = PositionOfButton.BOTTOM;
   buttonVisibleOnSection = true;
 
-  /*This click event (statusOfButton) should be embedded in the app.component.html - sections,
-   so that we can change the status of button depend on the section number*/
-  /*public statusOfButton(currentPos: number) {
-    this.buttonColor = currentPos === 2 || currentPos === 6 || currentPos === 7 ? Colors.BLACK : Colors.WHITE;
-    this.buttonVisibleOnSection = !(currentPos === 3 || currentPos === 8);
-  }*/
+  public statusOfButton(sectionId) {
+    this.buttonColor = sectionId === 'sectionTwo' || sectionId === 'sectionSix' || sectionId === 'sectionSeven' ? Colors.BLACK : Colors.WHITE;
+    this.buttonVisibleOnSection = !(sectionId === 'sectionEight');
+  }
+
+  public scrollDown() {
+    switch (this.positionOfView) {
+      case SectionId.SECTIONONE: {
+        this.positionOfView = this.sectionId.SECTIONTWO;
+        break;
+      }
+      case SectionId.SECTIONTWO: {
+        this.positionOfView = this.sectionId.SECTIONTHREE;
+        break;
+      }
+    }
+    document.getElementById(this.positionOfView).scrollIntoView();
+    this.statusOfButton(this.positionOfView);
+  }
 }
