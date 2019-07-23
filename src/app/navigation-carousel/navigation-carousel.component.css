@@ -19,12 +19,6 @@ li {
   margin-top: 36px;
 }
 
-li:hover {
-    background-color: white;
-}
-
 li.active {
   background-color: white;
 }
-
-
