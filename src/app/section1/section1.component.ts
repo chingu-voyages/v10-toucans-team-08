@@ -21,13 +21,11 @@ export class Section1Component implements OnInit {
   title3 = ` What if you could help<br> <b>cure Zika</b><br> while listening to music? `;
   title4 = ` What if you could help<br> <b>treat HIV/AIDS</b><br> while posting a status update? `;
   title = this.title1;
-  icon1 = true;
-  icon2 = false;
-  icon3 = false;
-  icon4 = false;
+  textIcon = true;
+  playIcon = false;
+  musicIcon = false;
   
   constructor() {
-
   }
 
   ngOnInit(): void {
@@ -38,20 +36,18 @@ export class Section1Component implements OnInit {
     if (this.state === 'hide') {
       if (this.title === this.title1) {
         this.title = this.title2;
-        this.icon1 = false;
-        this.icon2 = true;
+        this.textIcon = false;
+        this.playIcon = true;
       } else if (this.title === this.title2) {
         this.title = this.title3;
-        this.icon2 = false;
-        this.icon3 = true;
+        this.playIcon = false;
+        this.musicIcon = true;
       } else if (this.title === this.title3) {
         this.title = this.title4;
-        this.icon3 = false;
-        this.icon4 = true;
+        this.musicIcon = false;
+        this.textIcon = true;
       } else if (this.title === this.title4) {
         this.title = this.title1;
-        this.icon4 = false;
-        this.icon1 = true;
       }
     }
   }
@@ -60,6 +56,4 @@ export class Section1Component implements OnInit {
     this.state = (this.state === 'show' ? 'hide' : 'show');
     setTimeout(this.titleChange, 1000);
   }
-
-
 }

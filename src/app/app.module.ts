@@ -8,7 +8,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {Icon1Component} from './icon1/icon1.component';
 import {Icon2Component} from './icon2/icon2.component';
 import {Icon3Component} from './icon3/icon3.component';
-import {Icon4Component} from './icon4/icon4.component';
 import {IconComponent} from './icon/icon.component';
 import {ScrollSectionBtnComponent} from './scroll-section-btn/scroll-section-btn.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
@@ -21,7 +20,6 @@ import {MainMenuComponent} from './main-menu/main-menu.component';
     Icon1Component,
     Icon2Component,
     Icon3Component,
-    Icon4Component,
     IconComponent,
     AppComponent,
     ScrollSectionBtnComponent,
