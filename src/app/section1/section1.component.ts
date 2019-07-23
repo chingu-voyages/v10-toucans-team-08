@@ -25,11 +25,16 @@ export class Section1Component implements OnInit {
   icon2 = false;
   icon3 = false;
   icon4 = false;
-   
-  ngOnInit(): void {
+  
+  constructor() {
+
   }
 
-  titlechange = () => {
+  ngOnInit(): void {
+    setInterval(this.stateChange, 3000);
+  }
+
+  titleChange = () => {
     if (this.state === 'hide') {
       if (this.title === this.title1) {
         this.title = this.title2;
@@ -51,12 +56,10 @@ export class Section1Component implements OnInit {
     }
   }
 
-  switch = () => {
+  stateChange = () => {
     this.state = (this.state === 'show' ? 'hide' : 'show');
-    setTimeout(this.titlechange, 1000);
+    setTimeout(this.titleChange, 1000);
   }
 
-  constructor() {
-    setInterval(this.switch, 3000);
-  }
+
 }
