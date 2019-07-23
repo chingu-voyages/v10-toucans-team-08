@@ -21,43 +21,39 @@ export class Section1Component implements OnInit {
   title3 = ` What if you could help<br> <b>cure Zika</b><br> while listening to music? `;
   title4 = ` What if you could help<br> <b>treat HIV/AIDS</b><br> while posting a status update? `;
   title = this.title1;
-  icon1 = `<app-icon1 class="section-content__small-image-1"></app-icon1>`;
-  icon2 = `<app-icon2 class="section-content__small-image-1"></app-icon2>`;
-  icon3 = `<app-icon3 class="section-content__small-image-1"></app-icon3>`;
-  icon4 = `<app-icon4 class="section-content__small-image-1"></app-icon4>`;
-  icon = this.icon1;
-
-  ngOnInit(): void {
+  textIcon = true;
+  playIcon = false;
+  musicIcon = false;
+  
+  constructor() {
   }
 
-  titlechange = () => {
+  ngOnInit(): void {
+    setInterval(this.stateChange, 3000);
+  }
+
+  titleChange = () => {
     if (this.state === 'hide') {
       if (this.title === this.title1) {
         this.title = this.title2;
-        this.icon = this.icon2;
-        console.log(this.icon);
+        this.textIcon = false;
+        this.playIcon = true;
       } else if (this.title === this.title2) {
         this.title = this.title3;
-        this.icon = this.icon3;
-        console.log(this.icon);
+        this.playIcon = false;
+        this.musicIcon = true;
       } else if (this.title === this.title3) {
         this.title = this.title4;
-        this.icon = this.icon4;
-        console.log(this.icon);
+        this.musicIcon = false;
+        this.textIcon = true;
       } else if (this.title === this.title4) {
         this.title = this.title1;
-        this.icon = this.icon1;
-        console.log(this.icon);
       }
     }
   }
 
-  switch = () => {
+  stateChange = () => {
     this.state = (this.state === 'show' ? 'hide' : 'show');
-    setTimeout(this.titlechange, 1000);
-  }
-
-  constructor() {
-    setInterval(this.switch, 3000);
+    setTimeout(this.titleChange, 1000);
   }
 }
