@@ -10,7 +10,7 @@ ol {
   margin: 0;
 }
 
-li {
+.navigation-item {
   border: 2px solid white;
   border-radius: 100%;
   padding: 4px;
@@ -19,6 +19,6 @@ li {
   margin-top: 36px;
 }
 
-li.active {
+.navigation-item__active {
   background-color: white;
 }
