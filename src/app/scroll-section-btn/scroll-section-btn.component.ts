@@ -24,7 +24,7 @@ export class ScrollSectionBtnComponent implements OnInit {
   @Output() clicked: EventEmitter<any> = new EventEmitter();
 
   onClicked() {
-    this.clicked.emit(800);
+    this.clicked.emit();
   }
 
   constructor() {
