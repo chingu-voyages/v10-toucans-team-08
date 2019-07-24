@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationCarouselComponent implements OnInit {
 
+  active = 1;
+  activeNav(elementNumber) {
+    this.active = elementNumber;
+  }
   constructor() { }
 
   ngOnInit() {
