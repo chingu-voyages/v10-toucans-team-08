@@ -1,10 +1,18 @@
-<app-main-menu></app-main-menu>
-<app-navigation-carousel></app-navigation-carousel>
-<section class="section" id="sectionOne" [style.backgroundImage]="'url(/assets/background-1.jpg)'" [style.backgroundColor]="'#335a8a'">
-  <app-section1></app-section1>
-</section>
-<section class="section" id="sectionTwo" [style.backgroundImage]="'url(/assets/background-2.jpg)'" [style.backgroundColor]="'#FDD500'">
-</section>
-<app-scroll-section-btn [color]="buttonColor" [positionButton]="positionButton"
-                        [visible]="buttonVisibleOnSection" (clicked)="scrollDown()"></app-scroll-section-btn>
+<div class="wrapper">
+  <app-main-menu></app-main-menu>
+  <app-navigation-carousel></app-navigation-carousel>
+  <div class="section-wrapper"
+       [ngStyle]="{'transform': 'translateY(-' + scrollValue + '%)'}">
+    <section class="section" id="sectionOne" [style.backgroundImage]="'url(/assets/background-1.jpg)'"
+             [style.backgroundColor]="'#335a8a'">
+      <app-section1></app-section1>
+    </section>
+    <section class="section" id="sectionTwo" [style.backgroundImage]="'url(/assets/background-2.jpg)'"
+             [style.backgroundColor]="'#FDD500'">
+    </section>
+  </div>
+  <app-scroll-section-btn [color]="buttonColor" [positionButton]="positionButton"
+                          [visible]="buttonVisibleOnSection" (clicked)="onClickToScrollDown()">
 
+  </app-scroll-section-btn>
+</div>

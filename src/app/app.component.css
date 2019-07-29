@@ -1,3 +1,13 @@
+.wrapper {
+  overflow: hidden;
+  height: 110vh;
+}
+
+.section-wrapper {
+  transition: transform 2s;
+  height: 100%;
+}
+
 .section {
   height: 95vh;
   overflow: hidden;
