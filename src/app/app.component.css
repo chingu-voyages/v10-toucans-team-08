@@ -4,7 +4,7 @@
 }
 
 .section-wrapper {
-  transition: transform 2s;
+  transition: ease-in-out, transform 1s;
   height: 100%;
 }
 
