@@ -52,13 +52,13 @@ export class AppComponent {
       default:
         this.positionOfView = SectionId.SECTIONONE;
     }
-    this.statusOfButton(currentPosition);
+    this.statusOfButton(this.positionOfView);
   }
 
 
   public onClickToScrollDown() {
-    this.scrollValue += 80;
     this.changePositionOfView(this.positionOfView, true);
+    this.scrollValue += 80;
   }
 
   @HostListener('window:scroll')
