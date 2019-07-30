@@ -25,7 +25,7 @@ export class AppComponent {
   buttonColor: Colors = Colors.WHITE;
   positionButton: PositionOfButton = PositionOfButton.BOTTOM;
   buttonVisibleOnSection = true;
-  private lastScrollTop = 0;
+  private lastScrollPosition = 0;
   scrollValue = 0;
 
   public statusOfButton(sectionId) {
@@ -59,15 +59,23 @@ export class AppComponent {
 
   public onClickToScrollDown() {
     this.changePositionOfView(this.positionOfView, true);
-    this.scrollValue += 80;
+    this.scrollValue += 100;
   }
 
   @debounce()
   @HostListener('window:scroll')
   public scrollDown() {
     const currentScrollPosition = window.scrollY;
-    const scrollToDown = (currentScrollPosition > this.lastScrollTop);
-    this.changePositionOfView(this.positionOfView, scrollToDown);
-    this.lastScrollTop = currentScrollPosition <= 0 ? 0 : currentScrollPosition;
+    const scrollToDown = (currentScrollPosition > this.lastScrollPosition);
+    const scrollDelta = (currentScrollPosition - this.lastScrollPosition > 20)
+      || (currentScrollPosition - this.lastScrollPosition < 20);
+    if (scrollToDown && scrollDelta) {
+      this.changePositionOfView(this.positionOfView, scrollToDown);
+      this.scrollValue += 100;
+    } else {
+      this.changePositionOfView(this.positionOfView, scrollToDown);
+      this.scrollValue -= 100;
+    }
+    this.lastScrollPosition = currentScrollPosition <= 0 ? 0 : currentScrollPosition;
   }
 }
