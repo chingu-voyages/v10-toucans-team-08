@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {Colors, PositionOfButton} from './scroll-section-btn/scroll-section-btn.component';
 
-enum SectionId {
+export enum SectionId {
   SECTIONONE = 'sectionOne',
   SECTIONTWO = 'sectionTwo',
   SECTIONTHREE = 'sectionThree',
@@ -26,7 +26,10 @@ export class AppComponent {
   buttonVisibleOnSection = true;
 
   public statusOfButton(sectionId) {
-    this.buttonColor = sectionId === 'sectionTwo' || sectionId === 'sectionSix' || sectionId === 'sectionSeven' ? Colors.BLACK : Colors.WHITE;
+    this.buttonColor = sectionId === 'sectionTwo'
+    || sectionId === 'sectionSix'
+    || sectionId === 'sectionSeven'
+      ? Colors.BLACK : Colors.WHITE;
     this.buttonVisibleOnSection = !(sectionId === 'sectionEight');
   }
 
