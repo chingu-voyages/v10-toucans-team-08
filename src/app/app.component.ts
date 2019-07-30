@@ -1,5 +1,6 @@
 import {Component, HostListener} from '@angular/core';
 import {Colors, PositionOfButton} from './scroll-section-btn/scroll-section-btn.component';
+import {debounce} from './decorators';
 
 enum SectionId {
   SECTIONONE = 'sectionOne',
@@ -61,6 +62,7 @@ export class AppComponent {
     this.scrollValue += 80;
   }
 
+  @debounce()
   @HostListener('window:scroll')
   public scrollDown() {
     const currentScrollPosition = window.scrollY;
