@@ -12,9 +12,9 @@ import {IconComponent} from './icon/icon.component';
 import {ScrollSectionBtnComponent} from './scroll-section-btn/scroll-section-btn.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {MainMenuComponent} from './main-menu/main-menu.component';
-import { NavigationCarouselComponent } from './navigation-carousel/navigation-carousel.component';
-import { Section3Component } from './section3/section3.component';
-import { HeaderSubsectionComponent } from './section3/header-subsection/header-subsection.component';
+import {NavigationCarouselComponent} from './navigation-carousel/navigation-carousel.component';
+import {Section3Component} from './section3/section3.component';
+import {Section3SubsectionComponent} from './section3/section3-subsection/section3-subsection.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { HeaderSubsectionComponent } from './section3/header-subsection/header-s
     MainMenuComponent,
     NavigationCarouselComponent,
     Section3Component,
-    HeaderSubsectionComponent
+    Section3SubsectionComponent,
   ],
   imports: [
     BrowserModule,
