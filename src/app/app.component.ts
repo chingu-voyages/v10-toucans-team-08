@@ -67,8 +67,8 @@ export class AppComponent {
   public scrollDown() {
     const currentScrollPosition = window.scrollY;
     const scrollToDown = (currentScrollPosition > this.lastScrollPosition);
-    const scrollDelta = (currentScrollPosition - this.lastScrollPosition > 10)
-      || (currentScrollPosition - this.lastScrollPosition < 10);
+    const scrollDelta = (currentScrollPosition - this.lastScrollPosition > 20)
+      || (currentScrollPosition - this.lastScrollPosition < 20);
     if (scrollToDown && scrollDelta) {
       this.changePositionOfView(this.positionOfView, scrollToDown);
       this.scrollValue += 100;
