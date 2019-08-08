@@ -1,5 +1,62 @@
 <ul class="section" id="sectionThree">
-  <app-section3-subsection></app-section3-subsection>
+  <li class="subsection-challenge subsection-bg" [class.active-section-challenge]=" !isChallengeSubsectionHidden">
+    <div class="header accordion"
+         (click)="sectionVisible('challenge')"
+         [class.active-header]=" !isChallengeSubsectionHidden">
+      <fa-icon class="header-icon" [icon]="iconMountain"></fa-icon>
+      <h3 class="header-text">Challenge</h3>
+    </div>
+    <div class="content panel" [hidden]="isChallengeSubsectionHidden">
+      <div class="main-content">
+        <h2 class="main-content__title ">Scientists need help</h2>
+      </div>
+      <div class="main-content__text">
+        <p class="main-content__first-paragraph ">They’re searching the microscopic
+          world for answers to our biggest problems, but it’s hard to know where to start. That’s why many use computer
+          simulations to point them in the right direction, just as explorers rely on maps to find their way.</p>
+        <b class="main-content__second-paragraph ">Finding answers is tough, and without more computers, doing
+          scientific research can be a bit like exploring with an incomplete map</b>
+      </div>
+    </div>
+  </li>
+  <li class="subsection-solution subsection-bg" [class.active-section-solution]=" !isSolutionSubsectionHidden">
+    <div class="header accordion" (click)="sectionVisible('solution')"
+         [class.active-header]=" !isSolutionSubsectionHidden">
+      <fa-icon class="header-icon" [icon]="iconCompass"></fa-icon>
+      <h3 class="header-text">Solution</h3>
+    </div>
+    <div class="content panel" [hidden]="isSolutionSubsectionHidden">
+      <div class="main-content">
+        <h2 class="main-content__title ">Your device makes a difference</h2>
+      </div>
+      <div class="main-content__text">
+        <p class="main-content__first-paragraph ">World Community Grid turns your device into an explorer. You choose a
+          research area, download a toolkit called BOINC and join the thousands of volunteers
+          helping to chart the microscopic jungle.</p>
+      </div>
+    </div>
+  </li>
+  <li class="subsection-impact subsection-bg" [class.active-section-impact]=" !isImpactSubsectionHidden">
+    <div class="header accordion" (click)="sectionVisible('impact')" [class.active-header]=" !isImpactSubsectionHidden">
+      <fa-icon class="header-icon" [icon]="iconFlag"></fa-icon>
+      <h3 class="header-text">Impact</h3>
+    </div>
+    <div class="content panel" [hidden]="isImpactSubsectionHidden">
+      <div class="main-content">
+        <h2 class="main-content__title ">Get results that matter</h2>
+      </div>
+      <div class="main-content__text">
+        <p class="main-content__first-paragraph ">As a World Community Grid volunteer, your device does research
+          calculations when it’s idle, so just by using it as you do every day, you can help
+          scientists get results in months instead of decades. With your help, they can identify the most important
+          areas to study in the lab, bringing them one step closer to discoveries that save lives and address global
+          problems.</p>
+      </div>
+    </div>
+  </li>
+  <button class="btn-down">
+    <fa-icon class="btn-down__icon" [icon]="iconArrowDown"></fa-icon>
+  </button>
 </ul>
 
 
