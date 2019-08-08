@@ -1,4 +1,4 @@
-import {Component, HostListener} from '@angular/core';
+import {Component} from '@angular/core';
 import {faMountain} from '@fortawesome/free-solid-svg-icons/faMountain';
 import {faCompass} from '@fortawesome/free-regular-svg-icons/faCompass';
 import {faFlag} from '@fortawesome/free-regular-svg-icons';
@@ -17,7 +17,6 @@ export class Section3Component {
   public isChallengeSubsectionHidden = false;
   public isSolutionSubsectionHidden = true;
   public isImpactSubsectionHidden = true;
-
   public sectionVisible(sectionName: string) {
     switch (sectionName) {
       case 'challenge': {

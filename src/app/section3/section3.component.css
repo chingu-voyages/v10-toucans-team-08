@@ -1,3 +1,6 @@
+*{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 .section {
   height: 100%;
   background-color: #2D75CF;
@@ -12,6 +15,7 @@
   background-blend-mode: soft-light;
   background-size: 20%;
   background-color: #2D75CF;
+  position: relative;
 }
 
 .active-section-challenge {
@@ -53,7 +57,6 @@
 }
 
 .header-text {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -69,14 +72,17 @@
 }
 
 .main-content__title {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 22px;
+  margin-bottom: 24px;
+}
+
+.main-content__image {
+  display: none;
 }
 
 .main-content__text {
   padding-left: 48px;
   padding-right: 48px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
   line-height: 19px;
 }
@@ -85,13 +91,64 @@
   margin-bottom: 24px;
 }
 
-.btn-down {
+.icon-navigation {
+  font-size: 17px;
   color: white;
-  position: relative;
-  bottom: -280px;
+  position: absolute;
+  bottom: 10px;
 }
 
-.panel {
-  overflow-y: scroll;
-  transition: max-height 0.2s ease-out;
+@media (min-width: 500px) {
+  .content {
+    margin: 60px 0 60px 0;
+  }
+  .main-content__image {
+    display: block;
+    height: 155px;
+    max-width: 200px;
+    margin: auto;
+  }
+  .header-text {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    padding-left: 12px;
+  }
+  .header-icon {
+    font-size: 28px;
+  }
+  .subsection-bg {
+    background-size: 10%;
+  }
+  .main-content__text {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+@media (min-width: 850px) {
+  .header-text {
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+  }
+  .header-icon {
+    font-size: 22px;
+  }
+  .main-content__title {
+    font-size: 36px;
+    margin-bottom: 24px;
+  }
+  .main-content__text {
+    padding-left: 48px;
+    padding-right: 48px;
+    font-size: 22px;
+    line-height: 28px;
+  }
+  .active-section-challenge, .active-section-impact {
+    height: calc(100% - 96px);
+  }
+  .active-section-solution {
+    height: calc(100% - 160px);
+  }
 }

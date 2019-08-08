@@ -6,9 +6,10 @@
       <fa-icon class="header-icon" [icon]="iconMountain"></fa-icon>
       <h3 class="header-text">Challenge</h3>
     </div>
-    <div class="content panel" [hidden]="isChallengeSubsectionHidden">
+    <div class="content" [hidden]="isChallengeSubsectionHidden">
       <div class="main-content">
         <h2 class="main-content__title ">Scientists need help</h2>
+        <img src="../../assets/image/challenge-compass.png" alt="Challenge Image" class="main-content__image">
       </div>
       <div class="main-content__text">
         <p class="main-content__first-paragraph ">They’re searching the microscopic
@@ -17,33 +18,41 @@
         <b class="main-content__second-paragraph ">Finding answers is tough, and without more computers, doing
           scientific research can be a bit like exploring with an incomplete map</b>
       </div>
+      <span class="icon-navigation" (click)="sectionVisible('solution')">
+        <fa-icon class="btn-down__icon" [icon]="iconArrowDown"></fa-icon>
+      </span>
     </div>
   </li>
-  <li class="subsection-solution subsection-bg" [class.active-section-solution]=" !isSolutionSubsectionHidden">
+  <li class="subsection-solution subsection-bg" id="solution" [class.active-section-solution]=" !isSolutionSubsectionHidden">
     <div class="header accordion" (click)="sectionVisible('solution')"
          [class.active-header]=" !isSolutionSubsectionHidden">
       <fa-icon class="header-icon" [icon]="iconCompass"></fa-icon>
       <h3 class="header-text">Solution</h3>
     </div>
-    <div class="content panel" [hidden]="isSolutionSubsectionHidden">
+    <div class="content" [hidden]="isSolutionSubsectionHidden">
       <div class="main-content">
         <h2 class="main-content__title ">Your device makes a difference</h2>
+        <img src="../../assets/image/solution.png" alt="Challenge Image" class="main-content__image">
       </div>
       <div class="main-content__text">
         <p class="main-content__first-paragraph ">World Community Grid turns your device into an explorer. You choose a
           research area, download a toolkit called BOINC and join the thousands of volunteers
           helping to chart the microscopic jungle.</p>
       </div>
+      <span class="icon-navigation" (click)="sectionVisible('impact')">
+        <fa-icon class="btn-down__icon" [icon]="iconArrowDown"></fa-icon>
+      </span>
     </div>
   </li>
-  <li class="subsection-impact subsection-bg" [class.active-section-impact]=" !isImpactSubsectionHidden">
+  <li class="subsection-impact subsection-bg" id="impact" [class.active-section-impact]=" !isImpactSubsectionHidden">
     <div class="header accordion" (click)="sectionVisible('impact')" [class.active-header]=" !isImpactSubsectionHidden">
       <fa-icon class="header-icon" [icon]="iconFlag"></fa-icon>
       <h3 class="header-text">Impact</h3>
     </div>
-    <div class="content panel" [hidden]="isImpactSubsectionHidden">
+    <div class="content" [hidden]="isImpactSubsectionHidden">
       <div class="main-content">
         <h2 class="main-content__title ">Get results that matter</h2>
+        <img src="../../assets/image/impact.png" alt="Challenge Image" class="main-content__image">
       </div>
       <div class="main-content__text">
         <p class="main-content__first-paragraph ">As a World Community Grid volunteer, your device does research
@@ -54,9 +63,6 @@
       </div>
     </div>
   </li>
-  <button class="btn-down">
-    <fa-icon class="btn-down__icon" [icon]="iconArrowDown"></fa-icon>
-  </button>
 </ul>
 
 
