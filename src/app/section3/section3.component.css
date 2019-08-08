@@ -109,7 +109,7 @@
     margin: auto;
   }
   .header-text {
-    font-size: 28px;
+    font-size: 22px;
     font-style: normal;
     font-weight: 700;
     padding-left: 12px;
@@ -128,7 +128,7 @@
 
 @media (min-width: 850px) {
   .header-text {
-    font-size: 26px;
+    font-size: 22px;
     font-style: normal;
     font-weight: 700;
   }
@@ -136,7 +136,7 @@
     font-size: 22px;
   }
   .main-content__title {
-    font-size: 36px;
+    font-size: 28px;
     margin-bottom: 24px;
   }
   .main-content__text {
