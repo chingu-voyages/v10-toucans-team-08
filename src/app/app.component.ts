@@ -42,7 +42,7 @@ export class AppComponent {
   public changePositionOfView(currentPosition: SectionId, goesDown: boolean) {
     switch (currentPosition) {
       case SectionId.SECTIONONE: {
-        this.positionOfView = goesDown ? this.sectionId.SECTIONTWO : currentPosition;
+        this.positionOfView = goesDown ? this.sectionId.SECTIONTWO : SectionId.SECTIONONE;
         break;
       }
       case SectionId.SECTIONTWO: {
@@ -64,8 +64,8 @@ export class AppComponent {
   }
 
   public onClickToScrollDown() {
-    this.changePositionOfView(this.positionOfView, true);
     this.scrollValue += 100;
+    this.changePositionOfView(this.positionOfView, true);
   }
 
   @debounce(500)
@@ -73,8 +73,8 @@ export class AppComponent {
   public scrollDown() {
     const currentScrollPosition = window.scrollY;
     const scrollToDown = (currentScrollPosition > this.lastScrollPosition);
-    const scrollDelta = (currentScrollPosition - this.lastScrollPosition > 20)
-      || (currentScrollPosition - this.lastScrollPosition < 20);
+    const scrollDelta = (currentScrollPosition - this.lastScrollPosition > 10)
+      || (currentScrollPosition - this.lastScrollPosition < 10);
     if (this.positionOfView === this.sectionId.SECTIONTHREE) {
       if (this.positionOfSubsectionThree === this.subSectionEnum.CHALLENGE && scrollToDown) {
         this.positionOfSubsectionThree = this.subSectionEnum.SOLUTION;
@@ -83,6 +83,7 @@ export class AppComponent {
         this.scrollValue -= 100;
       } else if (this.positionOfSubsectionThree === SubsectionId.SOLUTION && scrollToDown) {
         this.positionOfSubsectionThree = this.subSectionEnum.IMPACT;
+        this.buttonVisibleOnSection = true;
       } else if (this.positionOfSubsectionThree === SubsectionId.SOLUTION && !scrollToDown) {
         this.positionOfSubsectionThree = this.subSectionEnum.CHALLENGE;
       } else if (this.positionOfSubsectionThree === this.subSectionEnum.IMPACT && scrollToDown) {
@@ -96,10 +97,11 @@ export class AppComponent {
     } else {
       if (scrollToDown && scrollDelta) {
         this.scrollValue += 100;
+        this.changePositionOfView(this.positionOfView, scrollToDown);
       } else {
         this.scrollValue -= 100;
+        this.changePositionOfView(this.positionOfView, scrollToDown);
       }
-      this.changePositionOfView(this.positionOfView, scrollToDown);
       this.lastScrollPosition = currentScrollPosition <= 0 ? 0 : currentScrollPosition;
     }
   }
@@ -109,6 +111,7 @@ export class AppComponent {
       this.positionOfSubsectionThree = this.subSectionEnum.SOLUTION;
     } else if (this.positionOfSubsectionThree === SubsectionId.SOLUTION) {
       this.positionOfSubsectionThree = this.subSectionEnum.IMPACT;
+      this.buttonVisibleOnSection = true;
     }
   }
 }
