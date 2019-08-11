@@ -1,12 +1,12 @@
 <ul class="section" id="sectionThree">
-  <li class="subsection-challenge subsection-bg" [class.active-section-challenge]=" !isChallengeSubsectionHidden">
-    <div class="header accordion"
-         (click)="sectionVisible('challenge')"
-         [class.active-header]=" !isChallengeSubsectionHidden">
+  <li class="subsection-challenge subsection-bg" id="challenge"
+      [class.active-section-challenge]="subsectionId === enumValue.CHALLENGE">
+    <div class="header"
+         [class.active-header]="subsectionId === enumValue.CHALLENGE">
       <fa-icon class="header-icon" [icon]="iconMountain"></fa-icon>
       <h3 class="header-text">Challenge</h3>
     </div>
-    <div class="content" [hidden]="isChallengeSubsectionHidden">
+    <div class="content" [hidden]=" subsectionId !== enumValue.CHALLENGE">
       <div class="main-content">
         <h2 class="main-content__title ">Scientists need help</h2>
         <img src="../../assets/image/challenge-compass.png" alt="Challenge Image" class="main-content__image">
@@ -18,18 +18,19 @@
         <b class="main-content__second-paragraph ">Finding answers is tough, and without more computers, doing
           scientific research can be a bit like exploring with an incomplete map</b>
       </div>
-      <span class="icon-navigation" (click)="sectionVisible('solution')">
+      <span class="icon-navigation" (click)="sectionVisible()">
         <fa-icon class="btn-down__icon" [icon]="iconArrowDown"></fa-icon>
       </span>
     </div>
   </li>
-  <li class="subsection-solution subsection-bg" id="solution" [class.active-section-solution]=" !isSolutionSubsectionHidden">
-    <div class="header accordion" (click)="sectionVisible('solution')"
-         [class.active-header]=" !isSolutionSubsectionHidden">
+  <li class="subsection-solution subsection-bg" id="solution"
+      [class.active-section-solution]="subsectionId === enumValue.SOLUTION">
+    <div class="header"
+         [class.active-header]="subsectionId === enumValue.SOLUTION">
       <fa-icon class="header-icon" [icon]="iconCompass"></fa-icon>
       <h3 class="header-text">Solution</h3>
     </div>
-    <div class="content" [hidden]="isSolutionSubsectionHidden">
+    <div class="content" [hidden]="subsectionId !== enumValue.SOLUTION">
       <div class="main-content">
         <h2 class="main-content__title ">Your device makes a difference</h2>
         <img src="../../assets/image/solution.png" alt="Challenge Image" class="main-content__image">
@@ -39,19 +40,21 @@
           research area, download a toolkit called BOINC and join the thousands of volunteers
           helping to chart the microscopic jungle.</p>
       </div>
-      <span class="icon-navigation" (click)="sectionVisible('impact')">
+      <span class="icon-navigation" (click)="sectionVisible()">
         <fa-icon class="btn-down__icon" [icon]="iconArrowDown"></fa-icon>
       </span>
     </div>
   </li>
-  <li class="subsection-impact subsection-bg" id="impact" [class.active-section-impact]=" !isImpactSubsectionHidden">
-    <div class="header accordion" (click)="sectionVisible('impact')" [class.active-header]=" !isImpactSubsectionHidden">
+  <li class="subsection-impact subsection-bg" id="impact"
+      [class.active-section-impact]="subsectionId === enumValue.IMPACT">
+    <div class="header"
+         [class.active-header]="subsectionId === enumValue.IMPACT">
       <fa-icon class="header-icon" [icon]="iconFlag"></fa-icon>
       <h3 class="header-text">Impact</h3>
     </div>
-    <div class="content" [hidden]="isImpactSubsectionHidden">
+    <div class="content" [hidden]="subsectionId !== enumValue.IMPACT">
       <div class="main-content">
-        <h2 class="main-content__title ">Get results that matter</h2>
+        <h2 class="main-content__title">Get results that matter</h2>
         <img src="../../assets/image/impact.png" alt="Challenge Image" class="main-content__image">
       </div>
       <div class="main-content__text">

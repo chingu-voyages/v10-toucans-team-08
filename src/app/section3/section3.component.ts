@@ -1,8 +1,14 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {faMountain} from '@fortawesome/free-solid-svg-icons/faMountain';
 import {faCompass} from '@fortawesome/free-regular-svg-icons/faCompass';
 import {faFlag} from '@fortawesome/free-regular-svg-icons';
 import {faArrowDown} from '@fortawesome/free-solid-svg-icons/faArrowDown';
+
+export enum SubsectionId {
+  CHALLENGE = 'challenge',
+  SOLUTION = 'solution',
+  IMPACT = 'impact'
+}
 
 @Component({
   selector: 'app-section3',
@@ -14,29 +20,11 @@ export class Section3Component {
   public iconCompass = faCompass;
   public iconFlag = faFlag;
   public iconArrowDown = faArrowDown;
-  public isChallengeSubsectionHidden = false;
-  public isSolutionSubsectionHidden = true;
-  public isImpactSubsectionHidden = true;
-  public sectionVisible(sectionName: string) {
-    switch (sectionName) {
-      case 'challenge': {
-        this.isChallengeSubsectionHidden = !this.isChallengeSubsectionHidden;
-        this.isSolutionSubsectionHidden = true;
-        this.isImpactSubsectionHidden = true;
-        break;
-      }
-      case 'solution': {
-        this.isSolutionSubsectionHidden = !this.isSolutionSubsectionHidden;
-        this.isChallengeSubsectionHidden = true;
-        this.isImpactSubsectionHidden = true;
-        break;
-      }
-      case 'impact': {
-        this.isImpactSubsectionHidden = !this.isImpactSubsectionHidden;
-        this.isChallengeSubsectionHidden = true;
-        this.isSolutionSubsectionHidden = true;
-        break;
-      }
-    }
+  @Input() public subsectionId: SubsectionId;
+  public enumValue = SubsectionId;
+  @Output() clicked: EventEmitter<any> = new EventEmitter();
+
+  public sectionVisible() {
+    this.clicked.emit();
   }
 }
