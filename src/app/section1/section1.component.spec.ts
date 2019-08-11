@@ -1,6 +1,7 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { Section1Component } from './section1.component';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {Section1Component} from './section1.component';
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
 describe('Section1Component', () => {
   let component: Section1Component;
@@ -8,9 +9,11 @@ describe('Section1Component', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ Section1Component ]
+      imports: [NoopAnimationsModule],
+      declarations: [Section1Component],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +22,7 @@ describe('Section1Component', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create section1 component', () => {
     expect(component).toBeTruthy();
   });
 });

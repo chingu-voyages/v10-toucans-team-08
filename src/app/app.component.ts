@@ -2,7 +2,7 @@ import {Component, HostListener} from '@angular/core';
 import {Colors, PositionOfButton} from './scroll-section-btn/scroll-section-btn.component';
 import {debounce} from './decorators';
 
-enum SectionId {
+export enum SectionId {
   SECTIONONE = 'sectionOne',
   SECTIONTWO = 'sectionTwo',
   SECTIONTHREE = 'sectionThree',
