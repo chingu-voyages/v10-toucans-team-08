@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {faArrowAltCircleDown} from '@fortawesome/free-regular-svg-icons';
 
 export enum Colors {
@@ -16,7 +16,7 @@ export enum PositionOfButton {
   templateUrl: './scroll-section-btn.component.html',
   styleUrls: ['./scroll-section-btn.component.css']
 })
-export class ScrollSectionBtnComponent implements OnInit {
+export class ScrollSectionBtnComponent {
   @Input() public color: Colors;
   @Input() public positionButton: PositionOfButton;
   @Input() public visible: boolean;
@@ -26,11 +26,4 @@ export class ScrollSectionBtnComponent implements OnInit {
   onClicked() {
     this.clicked.emit();
   }
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
-
 }
