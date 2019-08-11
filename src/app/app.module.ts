@@ -14,6 +14,7 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {MainMenuComponent} from './main-menu/main-menu.component';
 import {NavigationCarouselComponent} from './navigation-carousel/navigation-carousel.component';
 import {Section3Component} from './section3/section3.component';
+import { Section2Component } from './section2/section2.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {Section3Component} from './section3/section3.component';
     MainMenuComponent,
     NavigationCarouselComponent,
     Section3Component,
+    Section2Component,
   ],
   imports: [
     BrowserModule,
