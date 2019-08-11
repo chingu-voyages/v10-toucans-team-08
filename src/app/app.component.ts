@@ -79,16 +79,16 @@ export class AppComponent {
       if (this.positionOfSubsectionThree === this.subSectionEnum.CHALLENGE && scrollToDown) {
         this.positionOfSubsectionThree = this.subSectionEnum.SOLUTION;
       } else if (this.positionOfSubsectionThree === this.subSectionEnum.CHALLENGE && !scrollToDown) {
-        this.positionOfView = this.sectionId.SECTIONTWO;
         this.scrollValue -= 100;
+        this.positionOfView = this.sectionId.SECTIONTWO;
       } else if (this.positionOfSubsectionThree === SubsectionId.SOLUTION && scrollToDown) {
         this.positionOfSubsectionThree = this.subSectionEnum.IMPACT;
         this.buttonVisibleOnSection = true;
       } else if (this.positionOfSubsectionThree === SubsectionId.SOLUTION && !scrollToDown) {
         this.positionOfSubsectionThree = this.subSectionEnum.CHALLENGE;
       } else if (this.positionOfSubsectionThree === this.subSectionEnum.IMPACT && scrollToDown) {
-        this.positionOfView = this.sectionId.SECTIONFOUR;
         this.scrollValue += 100;
+        this.positionOfView = this.sectionId.SECTIONFOUR;
       } else if (this.positionOfSubsectionThree === this.subSectionEnum.IMPACT && !scrollToDown) {
         this.positionOfSubsectionThree = this.subSectionEnum.SOLUTION;
       }
@@ -110,8 +110,8 @@ export class AppComponent {
     if (this.positionOfSubsectionThree === this.subSectionEnum.CHALLENGE) {
       this.positionOfSubsectionThree = this.subSectionEnum.SOLUTION;
     } else if (this.positionOfSubsectionThree === SubsectionId.SOLUTION) {
-      this.positionOfSubsectionThree = this.subSectionEnum.IMPACT;
       this.buttonVisibleOnSection = true;
+      this.positionOfSubsectionThree = this.subSectionEnum.IMPACT;
     }
   }
 }
