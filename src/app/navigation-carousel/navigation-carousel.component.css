@@ -2,6 +2,7 @@
   position: fixed;
   left: 12px;
   top: 210px;
+  z-index: 1000;
 }
 
 ol {
