@@ -1,6 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {Section1Component} from './section1/section1.component';
@@ -13,6 +12,7 @@ import {ScrollSectionBtnComponent} from './scroll-section-btn/scroll-section-btn
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {MainMenuComponent} from './main-menu/main-menu.component';
 import {NavigationCarouselComponent} from './navigation-carousel/navigation-carousel.component';
+import {Section4Component} from './section4/section4.component';
 import {Section3Component} from './section3/section3.component';
 import { Section2Component } from './section2/section2.component';
 
@@ -28,6 +28,7 @@ import { Section2Component } from './section2/section2.component';
     ScrollSectionBtnComponent,
     MainMenuComponent,
     NavigationCarouselComponent,
+    Section4Component,
     Section3Component,
     Section2Component,
   ],

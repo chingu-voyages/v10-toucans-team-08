@@ -1,0 +1,12 @@
+<section class="section" id="sectionFour" [style.backgroundImage]="backgroundUrl" [style.backgroundColor]="'#343537'">
+  <div class="section-wrapper">
+      <p class="section-title">With the power of World Community Grid, researchers&nbsp;have…</p>
+      <div class="progress-bar">
+        <div class="progress" [style.width]="widthInt + '%'" [style.backgroundColor]="color"></div>
+      </div>
+      <p [innerHTML]="text" class="section-subtitle" [style.color]="color"></p>
+      <!-- <button [hidden]="buttonHidden" (click)="startAgain()">Replay</button> -->
+      <button [hidden]="buttonHidden" (click)="startAgain()">Replay</button>
+  </div>
+</section>
+
