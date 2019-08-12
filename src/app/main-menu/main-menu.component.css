@@ -1,0 +1,188 @@
+header{
+  background-color:#DFE9E9;
+  padding:0 5px;
+  margin:-20px -10px 0 -10px;
+  z-index: 1000;
+  font-size: 20px;
+  position: fixed;
+  top: 0;
+  left:10px;
+  width: 100%;
+  height:auto;
+}
+
+.block-header{
+  height:78px;
+  width:100%;
+}
+
+.img--main-logo {
+  width:52px;
+  margin:0;
+  padding: 25px 0 0 7px;
+}
+
+.img--main-white-logo{
+  display:none;
+}
+
+.img--grid-logo {
+  width:200px;
+  margin: 0;
+  padding: 20px 0 0 2px;
+}
+
+.img--ibm-logo {
+  width:75px;
+  height:37px;
+  border-left: 1px solid #b7b7b7;
+  margin: 0 0 0 10px;
+  padding:0 0 2px 8px;
+}
+
+.block-header__main-logos {
+  list-style: none;
+  float: left;
+  padding:0;
+  margin:0;
+}
+
+.block-header__login-info {
+  list-style: none;
+  float: right;
+}
+
+.block-header__main-logos li,
+.block-header__login-info li{
+  display: inline-block;
+}
+
+ul.block-header__login-info {
+  padding-top: 14px;
+}
+
+.block-header__login-info li{
+  margin-right:10px;
+}
+
+.a--login-button:link,
+.a--login-button:visited {
+  padding: 8px 0 3px 0;
+  color: #D54427;
+  text-decoration: none;
+  font-weight:normal;
+  border-bottom: 2px solid #e2745e;
+  font-size: 20px;
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif
+}
+
+.a--login-button:hover,
+.a--login-button:active {
+  padding: 8px 0 3px 0;
+  color: #D54427;
+  font-weight:normal;
+  border-bottom: 2px solid #D54427;
+  font-size: 20px;
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif
+}
+
+.a--join-button {
+  background-color:#D54427;
+  padding: 7px 9px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 21px;
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif
+}
+
+.a--join-button:hover,
+.a--join-button:active {
+  background-color:#fff;
+  padding: 7px 9px;
+  text-decoration: none;
+  color: #D54427;
+  font-size: 21px;
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif
+}
+
+@media only screen and (max-width: 851px){
+  .img--main-logo{
+    display:none;
+  }
+
+  .img--grid-logo{
+    display:none;
+  }
+
+  .img--main-white-logo{
+    display:block;
+    width:50px;
+    margin: 0 5px 0 1px;
+    padding:30px 0 0 8px;
+  }
+
+  .img--ibm-logo{
+    margin:0;
+    padding: 0 0 0 5px;
+
+  }
+}
+
+@media only screen and (max-width: 501px) {
+  .img--main-white-logo {
+    width:35px;
+    padding:0 0 5px 7px;
+    margin: 0 6px 0 0;
+  }
+
+  .img--ibm-logo {
+    width: 70px;
+    border-left: 1px solid #b7b7b7;
+    margin-top:30px;
+    padding: 3px 0 0 3px;
+  }
+
+  .a--login-button:link,
+  .a--login-button:visited {
+    padding: 8px 0 3px 0;
+    color: #D54427;
+    text-decoration: none;
+    font-weight: normal;
+    border-bottom: 2px solid #e2745e;
+    font-size: 18px;
+  }
+
+  .a--login-button:hover,
+  .a--login-button:active {
+    padding: 8px 0 3px 0;
+    color: #D54427;
+    text-decoration: none;
+    font-weight: normal;
+    border-bottom: 2px solid #D54427;
+    font-size: 18px;
+  }
+
+  .a--join-button {
+    background-color: #D54427;
+    padding: 7px 9px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+  }
+
+  .a--join-button:hover,
+  .a--join-button:active {
+    background-color: #fff;
+    padding: 7px 9px;
+    text-decoration: none;
+    color: #D54427;
+    font-size: 18px;
+  }
+}
+
+
+
+.closeButton {
+  padding-top:20px;
+}
+

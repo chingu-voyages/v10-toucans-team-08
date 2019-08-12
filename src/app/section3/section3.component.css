@@ -1,0 +1,151 @@
+.section {
+  height: 100%;
+  background-color: #2D75CF;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+/*subsection*/
+
+.subsection-bg {
+  background-blend-mode: soft-light;
+  background-size: 20%;
+  background-color: #2D75CF;
+  position: relative;
+}
+
+.active-section-challenge {
+  height: 78%;
+}
+
+.active-section-solution, .active-section-impact {
+  height: 70%;
+}
+
+.active-header {
+  margin-bottom: 24px;
+}
+
+.subsection-challenge {
+  background-image: url("../../assets/image/challenge-bg.png");
+  padding-top: 60px;
+}
+
+.subsection-solution {
+  background-image: url("../../assets/image/solution-bg.png");
+}
+
+.subsection-impact {
+  background-image: url("../../assets/image/impact-bg.png");
+}
+
+/* Subsection*/
+
+.header {
+  height: 48px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: #2D75CF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-text {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  padding-left: 12px;
+}
+
+.header-icon {
+  font-size: 18px;
+}
+
+.main-content {
+  margin-bottom: 24px;
+}
+
+.main-content__title {
+  font-size: 22px;
+  margin-bottom: 24px;
+}
+
+.main-content__image {
+  display: none;
+}
+
+.main-content__text {
+  padding-left: 48px;
+  padding-right: 48px;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.main-content__first-paragraph {
+  margin-bottom: 24px;
+}
+
+.icon-navigation {
+  font-size: 17px;
+  color: white;
+  position: absolute;
+  bottom: 10px;
+}
+
+@media (min-width: 500px) {
+  .content {
+    margin: 60px 0 60px 0;
+  }
+  .main-content__image {
+    display: block;
+    height: 155px;
+    max-width: 200px;
+    margin: auto;
+  }
+  .header-text {
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    padding-left: 12px;
+  }
+  .header-icon {
+    font-size: 28px;
+  }
+  .subsection-bg {
+    background-size: 10%;
+  }
+  .main-content__text {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+@media (min-width: 850px) {
+  .header-text {
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+  }
+  .header-icon {
+    font-size: 22px;
+  }
+  .main-content__title {
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
+  .main-content__text {
+    padding-left: 48px;
+    padding-right: 48px;
+    font-size: 22px;
+    line-height: 28px;
+  }
+  .active-section-challenge, .active-section-impact {
+    height: calc(100% - 96px);
+  }
+  .active-section-solution {
+    height: calc(100% - 160px);
+  }
+}

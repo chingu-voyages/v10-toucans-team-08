@@ -1,0 +1,22 @@
+<section class="section" id="sectionOne" [style.backgroundImage]="'url(/assets/background-1.jpg)'"
+  [style.backgroundColor]="'#335a8a'">
+  <div class="section-content">
+    <div class="section-content__images">
+      <app-icon id="laptop"></app-icon>
+      <div [@crossfade]="state">
+        <app-icon1 class="section-content__small-image-1" [hidden]="!textIcon"></app-icon1>
+        <app-icon2 class="section-content__small-image-2" [hidden]="!playIcon"></app-icon2>
+        <app-icon3 class="section-content__small-image-3" [hidden]="!musicIcon"></app-icon3>
+        <app-icon1 class="section-content__small-image-4" [hidden]="!textIcon"></app-icon1>
+      </div>
+    </div>
+    <div class="section-content__text">
+      <p>
+        <span>
+          <span class="h1" [@crossfade]="state" [innerHTML]="title"></span>
+        </span>
+      </p>
+    </div>
+    <button class="section-content__button">Join 763K volunteers now</button>
+  </div>
+</section>

@@ -1,0 +1,25 @@
+.navigation {
+  position: fixed;
+  left: 12px;
+  top: 210px;
+  z-index: 1000;
+}
+
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation-item {
+  border: 2px solid white;
+  border-radius: 100%;
+  padding: 4px;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  margin-top: 36px;
+}
+
+.navigation-item__active {
+  background-color: white;
+}

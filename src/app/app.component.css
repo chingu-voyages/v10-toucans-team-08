@@ -1,0 +1,9 @@
+.wrapper {
+  overflow: hidden;
+  height: 105vh;
+}
+
+.section-wrapper {
+  transition: ease-in-out, transform 1s;
+  height: 100%;
+}
