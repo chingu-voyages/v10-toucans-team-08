@@ -1,12 +1,17 @@
-<app-main-menu></app-main-menu>
-<app-navigation-carousel></app-navigation-carousel>
-<app-section1></app-section1>
+<div class="wrapper">
+  <div class="section-wrapper"
+       [ngStyle]="{'transform': 'translateY(-' + scrollValue + '%)'}">
+    <app-main-menu></app-main-menu>
+    <app-navigation-carousel></app-navigation-carousel>
+    <app-section1 id="sectionOne"></app-section1>
+    <section class="section" id="sectionTwo" [style.backgroundImage]="'url(/assets/background-2.jpg)'"
+             [style.backgroundColor]="'#FDD500'">
+    </section>
+    <app-section3 id="sectionThree" [subsectionId]="positionOfSubsectionThree" (clicked)="onClickToSubsection()"></app-section3>
+    <app-section4 id="sectionFour"></app-section4>
+  </div>
+  <app-scroll-section-btn [color]="buttonColor" [positionButton]="positionButton"
+                          [visible]="buttonVisibleOnSection" (clicked)="onClickToScrollDown()" >
 
-<section class="section" id="sectionTwo" [style.backgroundImage]="'url(/assets/background-2.jpg)'" [style.backgroundColor]="'#FDD500'">
-</section>
-
-<app-section4 id="sectionThree"></app-section4>
-
-<app-scroll-section-btn [color]="buttonColor" [positionButton]="positionButton"
-                        [visible]="buttonVisibleOnSection" (clicked)="scrollDown()"></app-scroll-section-btn>
-
+  </app-scroll-section-btn>
+</div>

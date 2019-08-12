@@ -1,6 +1,5 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {RouterTestingModule} from '@angular/router/testing';
-import {AppComponent} from './app.component';
+import {AppComponent, SectionId} from './app.component';
 import {Colors, ScrollSectionBtnComponent} from './scroll-section-btn/scroll-section-btn.component';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 
@@ -10,9 +9,6 @@ describe('AppComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule,
-      ],
       declarations: [
         AppComponent,
         ScrollSectionBtnComponent
@@ -37,6 +33,12 @@ describe('AppComponent', () => {
   describe('The button status for color', () => {
     it('should be initialised with white color', () => {
       expect(app.buttonColor).toBe(Colors.WHITE);
+    });
+  });
+
+  describe('The position of view for app', () => {
+    it('Position of view should be initialised with section one', () => {
+      expect(app.positionOfView).toBe(SectionId.SECTIONONE);
     });
   });
 });

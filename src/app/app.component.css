@@ -1,5 +1,16 @@
+.wrapper {
+  overflow: hidden;
+  height: 105vh;
+}
+
+.section-wrapper {
+  transition: ease-in-out, transform 1s;
+  height: 100%;
+}
+
 .section {
-  height: 95vh;
+  height: 100%;
+  width: 100%;
   overflow: hidden;
   display: flex;
   justify-content: center;
