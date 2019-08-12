@@ -7,13 +7,8 @@
              [style.backgroundColor]="'#335a8a'">
       <app-section1></app-section1>
     </section>
-    <section class="section" id="sectionTwo" [style.backgroundImage]="'url(/assets/background-2.jpg)'"
-             [style.backgroundColor]="'#FDD500'">
-    </section>
+    <app-section2 id="sectionTwo"></app-section2>
     <app-section3 id="sectionThree" [subsectionId]="positionOfSubsectionThree" (clicked)="onClickToSubsection()"></app-section3>
-    <section class="section" id="sectionFour" [style.backgroundImage]="'url(/assets/background-2.jpg)'"
-             [style.backgroundColor]="'#FDD500'">
-    </section>
   </div>
   <app-scroll-section-btn [color]="buttonColor" [positionButton]="positionButton"
                           [visible]="buttonVisibleOnSection" (clicked)="onClickToScrollDown()" >
