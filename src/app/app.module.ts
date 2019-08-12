@@ -14,6 +14,7 @@ import {MainMenuComponent} from './main-menu/main-menu.component';
 import {NavigationCarouselComponent} from './navigation-carousel/navigation-carousel.component';
 import {Section4Component} from './section4/section4.component';
 import {Section3Component} from './section3/section3.component';
+import { Section2Component } from './section2/section2.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import {Section3Component} from './section3/section3.component';
     NavigationCarouselComponent,
     Section4Component,
     Section3Component,
+    Section2Component,
   ],
   imports: [
     BrowserModule,
