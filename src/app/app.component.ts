@@ -1,5 +1,6 @@
-import {Component, HostListener} from '@angular/core';
+import {Component, HostListener, ViewChild} from '@angular/core';
 import {Colors, PositionOfButton} from './scroll-section-btn/scroll-section-btn.component';
+import { Section4Component } from './section4/section4.component';
 import {debounce} from './decorators';
 import {SubsectionId} from './section3/section3.component';
 
@@ -21,6 +22,7 @@ export enum SectionId {
 })
 
 export class AppComponent {
+  @ViewChild(Section4Component, {static: false}) child;
   public sectionId = SectionId;
   public positionOfView: SectionId = SectionId.SECTIONONE;
   buttonColor: Colors = Colors.WHITE;
@@ -50,7 +52,12 @@ export class AppComponent {
         break;
       }
       case SectionId.SECTIONTHREE: {
-        this.positionOfView = goesDown ? this.sectionId.SECTIONFOUR : SectionId.SECTIONTWO;
+        if (goesDown) {
+          this.positionOfView = this.sectionId.SECTIONFOUR;
+          this.child.initializeLoadingProgress();
+        } else {
+          this.positionOfView = this.sectionId.SECTIONTWO;
+        }
         break;
       }
       case SectionId.SECTIONFOUR: {
