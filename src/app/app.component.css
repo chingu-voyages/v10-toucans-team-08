@@ -7,18 +7,3 @@
   transition: ease-in-out, transform 1s;
   height: 100%;
 }
-
-.section {
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-blend-mode: overlay;
-  background-size: cover;
-  background-position-x: center;
-  background-position-y: center;
-  text-align: center;
-  color: white;
-}
