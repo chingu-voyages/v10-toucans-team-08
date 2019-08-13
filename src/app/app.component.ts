@@ -88,6 +88,7 @@ export class AppComponent {
       } else if (this.positionOfSubsectionThree === this.subSectionEnum.CHALLENGE && !scrollToDown) {
         this.scrollValue -= 100;
         this.positionOfView = this.sectionId.SECTIONTWO;
+        this.statusOfButton(this.positionOfView);
       } else if (this.positionOfSubsectionThree === SubsectionId.SOLUTION && scrollToDown) {
         this.positionOfSubsectionThree = this.subSectionEnum.IMPACT;
         this.buttonVisibleOnSection = true;
