@@ -1,6 +1,6 @@
 import {Component, HostListener, ViewChild} from '@angular/core';
 import {Colors, PositionOfButton} from './scroll-section-btn/scroll-section-btn.component';
-import { Section4Component } from './section4/section4.component';
+import {Section4Component} from './section4/section4.component';
 import {debounce} from './decorators';
 import {SubsectionId} from './section3/section3.component';
 
@@ -25,19 +25,21 @@ export class AppComponent {
   @ViewChild(Section4Component, {static: false}) child;
   public sectionId = SectionId;
   public positionOfView: SectionId = SectionId.SECTIONONE;
-  buttonColor: Colors = Colors.WHITE;
-  positionButton: PositionOfButton = PositionOfButton.BOTTOM;
-  buttonVisibleOnSection = true;
-  private lastScrollPosition = 0;
-  scrollValue = 0;
+  public buttonColor: Colors = Colors.WHITE;
+  public positionButton: PositionOfButton = PositionOfButton.BOTTOM;
+  public buttonVisibleOnSection = true;
+  public scrollValue = 0;
   public positionOfSubsectionThree: SubsectionId = SubsectionId.CHALLENGE;
   public subSectionEnum = SubsectionId;
+
+  private lastScrollPosition = 0;
 
   public statusOfButton(sectionId) {
     this.buttonColor = sectionId === 'sectionTwo'
     || sectionId === 'sectionSix'
     || sectionId === 'sectionSeven'
       ? Colors.BLACK : Colors.WHITE;
+
     this.buttonVisibleOnSection = !(sectionId === 'sectionThree' || sectionId === 'sectionEight');
   }
 
@@ -54,7 +56,7 @@ export class AppComponent {
       case SectionId.SECTIONTHREE: {
         if (goesDown) {
           this.positionOfView = this.sectionId.SECTIONFOUR;
-          this.child.initializeLoadingProgress();
+          //   this.child.initializeLoadingProgress();
         } else {
           this.positionOfView = this.sectionId.SECTIONTWO;
         }
@@ -71,55 +73,88 @@ export class AppComponent {
   }
 
   public onClickToScrollDown() {
-    this.scrollValue += 100;
-    this.changePositionOfView(this.positionOfView, true);
+    if (this.positionOfView === this.sectionId.SECTIONFOUR) {
+      return;
+    } else {
+      this.scrollValue += 100;
+      this.changePositionOfView(this.positionOfView, true);
+    }
   }
 
   @debounce(500)
   @HostListener('window:scroll')
   public scrollDown() {
-    const currentScrollPosition = window.scrollY;
-    const scrollToDown = (currentScrollPosition > this.lastScrollPosition);
-    const scrollDelta = (currentScrollPosition - this.lastScrollPosition > 10)
-      || (currentScrollPosition - this.lastScrollPosition < 10);
+    if (window.scrollY === 15) {
+      return;
+    }
+    const scrollDOWN: boolean = this.getScrollDirection();
+
     if (this.positionOfView === this.sectionId.SECTIONTHREE) {
-      if (this.positionOfSubsectionThree === this.subSectionEnum.CHALLENGE && scrollToDown) {
+      this.sectionThreeSubSectionScrolling(scrollDOWN, this.positionOfSubsectionThree);
+      this.leaveSectionThree(scrollDOWN);
+    } else {
+      this.scrollView(scrollDOWN);
+      this.changePositionOfView(this.positionOfView, scrollDOWN);
+    }
+    this.resetScroll();
+  }
+
+  public leaveSectionThree(scrollDOWN: boolean) {
+    if (this.positionOfSubsectionThree === SubsectionId.IMPACT && scrollDOWN) {
+      this.scrollView(scrollDOWN);
+      this.changePositionOfView(this.positionOfView, scrollDOWN);
+    } else if (this.positionOfSubsectionThree === SubsectionId.CHALLENGE && !scrollDOWN) {
+      this.scrollView(scrollDOWN);
+      this.changePositionOfView(this.positionOfView, scrollDOWN);
+    }
+  }
+
+  private resetScroll() {
+    window.scrollTo(0, 15);
+    this.lastScrollPosition = 15;
+  }
+
+  public scrollView(scrollDOWN: boolean) {
+    if (!scrollDOWN && this.scrollValue === 0) {
+      return;
+    }
+
+    if (scrollDOWN && this.scrollValue === 300) {
+      return;
+    }
+
+    if (scrollDOWN) {
+      this.scrollValue += 100;
+    } else {
+      this.scrollValue -= 100;
+    }
+  }
+
+  private getScrollDirection(): boolean {
+    const boundingClientRect = window.document.body.getBoundingClientRect();
+    const scrollDown = boundingClientRect.top < -15;
+    this.lastScrollPosition = boundingClientRect.top;
+    return scrollDown;
+  }
+
+  public sectionThreeSubSectionScrolling(scrollDirectionDown, subSectionId: SubsectionId) {
+    if (scrollDirectionDown) {
+      if (subSectionId === this.subSectionEnum.CHALLENGE) {
         this.positionOfSubsectionThree = this.subSectionEnum.SOLUTION;
-      } else if (this.positionOfSubsectionThree === this.subSectionEnum.CHALLENGE && !scrollToDown) {
-        this.scrollValue -= 100;
-        this.positionOfView = this.sectionId.SECTIONTWO;
-        this.statusOfButton(this.positionOfView);
-      } else if (this.positionOfSubsectionThree === SubsectionId.SOLUTION && scrollToDown) {
+      } else if (subSectionId === SubsectionId.SOLUTION) {
         this.positionOfSubsectionThree = this.subSectionEnum.IMPACT;
         this.buttonVisibleOnSection = true;
-      } else if (this.positionOfSubsectionThree === SubsectionId.SOLUTION && !scrollToDown) {
-        this.positionOfSubsectionThree = this.subSectionEnum.CHALLENGE;
-      } else if (this.positionOfSubsectionThree === this.subSectionEnum.IMPACT && scrollToDown) {
-        this.scrollValue += 100;
-        this.positionOfView = this.sectionId.SECTIONFOUR;
-      } else if (this.positionOfSubsectionThree === this.subSectionEnum.IMPACT && !scrollToDown) {
-        this.positionOfSubsectionThree = this.subSectionEnum.SOLUTION;
       }
-    } else if (this.positionOfView === this.sectionId.SECTIONFOUR && scrollToDown) {
-      return;
     } else {
-      if (scrollToDown && scrollDelta) {
-        this.scrollValue += 100;
-        this.changePositionOfView(this.positionOfView, scrollToDown);
-      } else {
-        this.scrollValue -= 100;
-        this.changePositionOfView(this.positionOfView, scrollToDown);
+      if (this.positionOfSubsectionThree === this.subSectionEnum.IMPACT) {
+        this.positionOfSubsectionThree = this.subSectionEnum.SOLUTION;
+      } else if (this.positionOfSubsectionThree === SubsectionId.SOLUTION) {
+        this.positionOfSubsectionThree = this.subSectionEnum.CHALLENGE;
       }
-      this.lastScrollPosition = currentScrollPosition <= 0 ? 0 : currentScrollPosition;
     }
   }
 
   onClickToSubsection() {
-    if (this.positionOfSubsectionThree === this.subSectionEnum.CHALLENGE) {
-      this.positionOfSubsectionThree = this.subSectionEnum.SOLUTION;
-    } else if (this.positionOfSubsectionThree === SubsectionId.SOLUTION) {
-      this.buttonVisibleOnSection = true;
-      this.positionOfSubsectionThree = this.subSectionEnum.IMPACT;
-    }
+    this.sectionThreeSubSectionScrolling(true, this.positionOfSubsectionThree);
   }
 }
