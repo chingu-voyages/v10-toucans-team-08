@@ -1,4 +1,4 @@
-<ul class="section" id="sectionThree">
+<ul class="section">
   <li class="subsection-challenge subsection-bg" id="challenge"
       [class.active-section-challenge]="subsectionId === enumValue.CHALLENGE">
     <div class="header"
@@ -8,8 +8,8 @@
     </div>
     <div class="content" [hidden]=" subsectionId !== enumValue.CHALLENGE">
       <div class="main-content">
-        <h2 class="main-content__title ">Scientists need help</h2>
-        <img src="../../assets/image/challenge-compass.png" alt="Challenge Image" class="main-content__image">
+        <h2 class="main-content__title">Scientists need help</h2>
+        <img class="main-content__image" src="../../assets/image/challenge-compass.png" alt="Challenge Image">
       </div>
       <div class="main-content__text">
         <p class="main-content__first-paragraph ">They’re searching the microscopic
@@ -33,7 +33,7 @@
     <div class="content" [hidden]="subsectionId !== enumValue.SOLUTION">
       <div class="main-content">
         <h2 class="main-content__title ">Your device makes a difference</h2>
-        <img src="../../assets/image/solution.png" alt="Challenge Image" class="main-content__image">
+        <img class="main-content__image" src="../../assets/image/solution.png" alt="Challenge Image">
       </div>
       <div class="main-content__text">
         <p class="main-content__first-paragraph ">World Community Grid turns your device into an explorer. You choose a
@@ -55,7 +55,7 @@
     <div class="content" [hidden]="subsectionId !== enumValue.IMPACT">
       <div class="main-content">
         <h2 class="main-content__title">Get results that matter</h2>
-        <img src="../../assets/image/impact.png" alt="Challenge Image" class="main-content__image">
+        <img class="main-content__image" src="../../assets/image/impact.png" alt="Challenge Image">
       </div>
       <div class="main-content__text">
         <p class="main-content__first-paragraph ">As a World Community Grid volunteer, your device does research
