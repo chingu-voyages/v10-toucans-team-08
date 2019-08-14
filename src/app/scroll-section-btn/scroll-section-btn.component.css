@@ -25,6 +25,7 @@
 
 .invisible {
   visibility: hidden;
+  transition: visibility 200ms ease-out 0s;
 }
 
 @media (min-width: 501px) {
