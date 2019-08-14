@@ -3,6 +3,7 @@ import {Colors, PositionOfButton} from './scroll-section-btn/scroll-section-btn.
 import {Section4Component} from './section4/section4.component';
 import {debounce} from './decorators';
 import {SubsectionId} from './section3/section3.component';
+import {NavigationCarouselComponent} from './navigation-carousel/navigation-carousel.component';
 
 export enum SectionId {
   SECTIONONE = 'sectionOne',
@@ -23,6 +24,7 @@ export enum SectionId {
 
 export class AppComponent {
   @ViewChild(Section4Component, {static: false}) child;
+  @ViewChild(NavigationCarouselComponent, {static: false}) navigation;
   public sectionId = SectionId;
   public positionOfView: SectionId = SectionId.SECTIONONE;
   public buttonColor: Colors = Colors.WHITE;
@@ -46,24 +48,45 @@ export class AppComponent {
   public changePositionOfView(currentPosition: SectionId, goesDown: boolean) {
     switch (currentPosition) {
       case SectionId.SECTIONONE: {
-        this.positionOfView = goesDown ? this.sectionId.SECTIONTWO : SectionId.SECTIONONE;
+        if (goesDown) {
+          this.positionOfView = this.sectionId.SECTIONTWO;
+          this.navigation.activeNav(2);
+        } else {
+          this.positionOfView = this.sectionId.SECTIONONE;
+          this.navigation.activeNav(1)
+        }
         break;
       }
       case SectionId.SECTIONTWO: {
-        this.positionOfView = goesDown ? this.sectionId.SECTIONTHREE : SectionId.SECTIONONE;
+        if (goesDown) {
+          this.positionOfView = this.sectionId.SECTIONTHREE;
+          this.navigation.activeNav(3);
+        } else {
+          this.positionOfView = this.sectionId.SECTIONONE;
+          this.navigation.activeNav(1);
+        }
         break;
       }
       case SectionId.SECTIONTHREE: {
         if (goesDown) {
           this.positionOfView = this.sectionId.SECTIONFOUR;
           this.child.initializeLoadingProgress();
+          this.navigation.activeNav(4);
         } else {
           this.positionOfView = this.sectionId.SECTIONTWO;
+          this.navigation.activeNav(2);
         }
         break;
       }
       case SectionId.SECTIONFOUR: {
         this.positionOfView = goesDown ? this.sectionId.SECTIONFOUR : SectionId.SECTIONTHREE;
+        if (goesDown) {
+          this.positionOfView = this.sectionId.SECTIONFOUR;
+          this.navigation.activeNav(4);
+        } else {
+          this.positionOfView = this.sectionId.SECTIONTHREE;
+          this.navigation.activeNav(3);
+        }
         break;
       }
       default:
