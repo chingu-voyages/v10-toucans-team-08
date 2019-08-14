@@ -75,7 +75,7 @@ export class AppComponent {
   @debounce(1000)
   @HostListener('window:scroll')
   public scrollDown() {
-    if (window.scrollY === 15) {
+    if (window.scrollY === 10) {
       return;
     }
     const scrollDOWN: boolean = this.getScrollDirection();
@@ -88,6 +88,7 @@ export class AppComponent {
       this.changePositionOfView(this.positionOfView, scrollDOWN);
     }
     this.resetScroll();
+    console.log(this.positionOfView);
   }
 
   public onClickToScrollDown() {
@@ -108,8 +109,8 @@ export class AppComponent {
   }
 
   private resetScroll() {
-    window.scrollTo(0, 15);
-    this.lastScrollPosition = 15;
+    window.scrollTo(0, 10);
+    this.lastScrollPosition = 10;
   }
 
   public scrollView(scrollDOWN: boolean) {
@@ -130,7 +131,7 @@ export class AppComponent {
 
   private getScrollDirection(): boolean {
     const boundingClientRect = window.document.body.getBoundingClientRect();
-    const scrollDown = boundingClientRect.top < -15;
+    const scrollDown = boundingClientRect.top < -10;
     this.lastScrollPosition = boundingClientRect.top;
     return scrollDown;
   }
@@ -150,7 +151,6 @@ export class AppComponent {
         this.positionOfSubsectionThree = this.subSectionEnum.CHALLENGE;
       }
     }
-    console.log('subsection name', subSectionId);
   }
 
   onClickToSubsection() {
