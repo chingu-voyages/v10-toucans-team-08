@@ -56,7 +56,7 @@ export class AppComponent {
       case SectionId.SECTIONTHREE: {
         if (goesDown) {
           this.positionOfView = this.sectionId.SECTIONFOUR;
-          //   this.child.initializeLoadingProgress();
+          // this.child.initializeLoadingProgress();
         } else {
           this.positionOfView = this.sectionId.SECTIONTWO;
         }
@@ -72,16 +72,7 @@ export class AppComponent {
     this.statusOfButton(this.positionOfView);
   }
 
-  public onClickToScrollDown() {
-    if (this.positionOfView === this.sectionId.SECTIONFOUR) {
-      return;
-    } else {
-      this.scrollValue += 100;
-      this.changePositionOfView(this.positionOfView, true);
-    }
-  }
-
-  @debounce(500)
+  @debounce(1000)
   @HostListener('window:scroll')
   public scrollDown() {
     if (window.scrollY === 15) {
@@ -99,12 +90,19 @@ export class AppComponent {
     this.resetScroll();
   }
 
+  public onClickToScrollDown() {
+    if (this.positionOfView === this.sectionId.SECTIONFOUR) {
+      return;
+    } else {
+      this.scrollValue += 100;
+      this.changePositionOfView(this.positionOfView, true);
+    }
+  }
+
   public leaveSectionThree(scrollDOWN: boolean) {
-    if (this.positionOfSubsectionThree === SubsectionId.IMPACT && scrollDOWN) {
-      this.scrollView(scrollDOWN);
+    if (this.positionOfSubsectionThree === this.subSectionEnum.IMPACT && scrollDOWN) {
       this.changePositionOfView(this.positionOfView, scrollDOWN);
-    } else if (this.positionOfSubsectionThree === SubsectionId.CHALLENGE && !scrollDOWN) {
-      this.scrollView(scrollDOWN);
+    } else if (this.positionOfSubsectionThree === this.subSectionEnum.CHALLENGE && !scrollDOWN) {
       this.changePositionOfView(this.positionOfView, scrollDOWN);
     }
   }
@@ -141,17 +139,18 @@ export class AppComponent {
     if (scrollDirectionDown) {
       if (subSectionId === this.subSectionEnum.CHALLENGE) {
         this.positionOfSubsectionThree = this.subSectionEnum.SOLUTION;
-      } else if (subSectionId === SubsectionId.SOLUTION) {
+      } else if (subSectionId === this.subSectionEnum.SOLUTION) {
         this.positionOfSubsectionThree = this.subSectionEnum.IMPACT;
         this.buttonVisibleOnSection = true;
       }
     } else {
-      if (this.positionOfSubsectionThree === this.subSectionEnum.IMPACT) {
+      if (subSectionId === this.subSectionEnum.IMPACT) {
         this.positionOfSubsectionThree = this.subSectionEnum.SOLUTION;
-      } else if (this.positionOfSubsectionThree === SubsectionId.SOLUTION) {
+      } else if (subSectionId === this.subSectionEnum.SOLUTION) {
         this.positionOfSubsectionThree = this.subSectionEnum.CHALLENGE;
       }
     }
+    console.log('subsection name', subSectionId);
   }
 
   onClickToSubsection() {

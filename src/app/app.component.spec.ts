@@ -138,7 +138,6 @@ describe('AppComponent', () => {
       app.positionOfView = SectionId.SECTIONTWO;
       app.scrollDown();
       expect(app.positionOfSubsectionThree).toBe(SubsectionId.CHALLENGE);
-
     });
   });
 });
