@@ -56,7 +56,7 @@ export class AppComponent {
       case SectionId.SECTIONTHREE: {
         if (goesDown) {
           this.positionOfView = this.sectionId.SECTIONFOUR;
-          // this.child.initializeLoadingProgress();
+          this.child.initializeLoadingProgress();
         } else {
           this.positionOfView = this.sectionId.SECTIONTWO;
         }
@@ -81,14 +81,13 @@ export class AppComponent {
     const scrollDOWN: boolean = this.getScrollDirection();
 
     if (this.positionOfView === this.sectionId.SECTIONTHREE) {
-      this.sectionThreeSubSectionScrolling(scrollDOWN, this.positionOfSubsectionThree);
       this.leaveSectionThree(scrollDOWN);
+      this.sectionThreeSubSectionScrolling(scrollDOWN, this.positionOfSubsectionThree);
     } else {
       this.scrollView(scrollDOWN);
       this.changePositionOfView(this.positionOfView, scrollDOWN);
     }
     this.resetScroll();
-    console.log(this.positionOfView);
   }
 
   public onClickToScrollDown() {
@@ -102,8 +101,10 @@ export class AppComponent {
 
   public leaveSectionThree(scrollDOWN: boolean) {
     if (this.positionOfSubsectionThree === this.subSectionEnum.IMPACT && scrollDOWN) {
+      this.scrollView(scrollDOWN);
       this.changePositionOfView(this.positionOfView, scrollDOWN);
     } else if (this.positionOfSubsectionThree === this.subSectionEnum.CHALLENGE && !scrollDOWN) {
+      this.scrollView(scrollDOWN);
       this.changePositionOfView(this.positionOfView, scrollDOWN);
     }
   }
@@ -147,6 +148,7 @@ export class AppComponent {
     } else {
       if (subSectionId === this.subSectionEnum.IMPACT) {
         this.positionOfSubsectionThree = this.subSectionEnum.SOLUTION;
+        this.buttonVisibleOnSection = false;
       } else if (subSectionId === this.subSectionEnum.SOLUTION) {
         this.positionOfSubsectionThree = this.subSectionEnum.CHALLENGE;
       }
