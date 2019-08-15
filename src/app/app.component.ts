@@ -53,7 +53,7 @@ export class AppComponent {
           this.navigation.activeNav(2);
         } else {
           this.positionOfView = this.sectionId.SECTIONONE;
-          this.navigation.activeNav(1)
+          this.navigation.activeNav(1);
         }
         break;
       }
@@ -79,7 +79,6 @@ export class AppComponent {
         break;
       }
       case SectionId.SECTIONFOUR: {
-        this.positionOfView = goesDown ? this.sectionId.SECTIONFOUR : SectionId.SECTIONTHREE;
         if (goesDown) {
           this.positionOfView = this.sectionId.SECTIONFOUR;
           this.navigation.activeNav(4);
@@ -106,6 +105,10 @@ export class AppComponent {
     if (this.positionOfView === this.sectionId.SECTIONTHREE) {
       this.leaveSectionThree(scrollDOWN);
       this.sectionThreeSubSectionScrolling(scrollDOWN, this.positionOfSubsectionThree);
+    } else if (this.positionOfView === this.sectionId.SECTIONFOUR && !scrollDOWN) {
+      this.changePositionOfView(this.positionOfView, scrollDOWN);
+      this.buttonVisibleOnSection = true;
+      this.scrollView(scrollDOWN);
     } else {
       this.scrollView(scrollDOWN);
       this.changePositionOfView(this.positionOfView, scrollDOWN);
