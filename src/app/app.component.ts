@@ -70,6 +70,9 @@ export class AppComponent {
   }
 
   public onclickToNavigate(selectedSection: SectionId) {
+    if (selectedSection === SectionId.SECTIONFOUR) {
+      this.child.initializeLoadingProgress();
+    }
     document.getElementById(selectedSection).scrollIntoView({block: 'center', behavior: 'smooth'});
     this.positionOfView = selectedSection;
     this.statusOfButton(selectedSection);
