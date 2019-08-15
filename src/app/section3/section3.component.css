@@ -1,35 +1,14 @@
 .section {
   height: 100%;
-  background-color: #2D75CF;
   text-align: center;
+  background-color: #2D75CF;
   color: white;
-  overflow: hidden;
+  padding-top: 100px;
 }
 
 /*subsection*/
-
-.subsection-bg {
-  background-blend-mode: soft-light;
-  background-size: 20%;
-  background-color: #2D75CF;
-  position: relative;
-}
-
-.active-section-challenge {
-  height: 78%;
-}
-
-.active-section-solution, .active-section-impact {
-  height: 70%;
-}
-
-.active-header {
-  margin-bottom: 24px;
-}
-
 .subsection-challenge {
   background-image: url("../../assets/image/challenge-bg.png");
-  padding-top: 60px;
 }
 
 .subsection-solution {
@@ -39,6 +18,26 @@
 .subsection-impact {
   background-image: url("../../assets/image/impact-bg.png");
 }
+
+.subsection-bg {
+  background-blend-mode: soft-light;
+  background-size: 20%;
+  background-color: #2D75CF;
+  position: relative;
+}
+
+.active-section-challenge {
+  height: calc(100% - 96px);
+}
+
+.active-section-solution, .active-section-impact {
+  height: calc(100% - 96px);
+}
+
+.active-header {
+  margin-bottom: 24px;
+}
+
 
 /* Subsection*/
 
@@ -53,15 +52,15 @@
   align-items: center;
 }
 
+.header-icon {
+  font-size: 18px;
+}
+
 .header-text {
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
   padding-left: 12px;
-}
-
-.header-icon {
-  font-size: 18px;
 }
 
 .main-content {
@@ -89,7 +88,7 @@
 }
 
 .icon-navigation {
-  font-size: 17px;
+  font-size: 24px;
   color: white;
   position: absolute;
   bottom: 10px;
@@ -99,24 +98,35 @@
   .content {
     margin: 60px 0 60px 0;
   }
-  .main-content__image {
-    display: block;
-    height: 155px;
-    max-width: 200px;
-    margin: auto;
+
+  .header-icon {
+    font-size: 28px;
   }
+
   .header-text {
     font-size: 22px;
     font-style: normal;
     font-weight: 700;
     padding-left: 12px;
   }
-  .header-icon {
-    font-size: 28px;
-  }
+
   .subsection-bg {
     background-size: 10%;
   }
+
+  .main-content__title {
+    font-size: 28px;
+    line-height: 34px;
+    margin-bottom: 24px;
+  }
+
+  .main-content__image {
+    display: block;
+    height: 155px;
+    max-width: 200px;
+    margin: auto;
+  }
+
   .main-content__text {
     font-size: 16px;
     line-height: 22px;
@@ -124,28 +134,26 @@
 }
 
 @media (min-width: 850px) {
-  .header-text {
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 700;
-  }
   .header-icon {
     font-size: 22px;
   }
+
+  .header-text {
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+  }
+
   .main-content__title {
-    font-size: 28px;
+    font-size: 36px;
     margin-bottom: 24px;
   }
+
   .main-content__text {
-    padding-left: 48px;
-    padding-right: 48px;
     font-size: 22px;
     line-height: 28px;
-  }
-  .active-section-challenge, .active-section-impact {
-    height: calc(100% - 96px);
-  }
-  .active-section-solution {
-    height: calc(100% - 160px);
+    padding-left: 48px;
+    padding-right: 48px;
   }
 }
