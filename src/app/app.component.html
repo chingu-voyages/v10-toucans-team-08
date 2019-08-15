@@ -1,6 +1,6 @@
 <div class="wrapper">
   <app-main-menu></app-main-menu>
-  <app-navigation-carousel></app-navigation-carousel>
+  <app-navigation-carousel [navigationId]="positionOfView" (clickedToNavigate)="onclickToNavigate($event)"></app-navigation-carousel>
   <div class="section-wrapper"
        [ngStyle]="{'transform': 'translateY(-' + scrollValue + '%)'}">
     <app-section1 id="sectionOne"></app-section1>

@@ -1,12 +1,16 @@
 <nav class="navigation">
-    <ol>
-      <li><a href="#sectionOne"><div class="navigation-item" (click)="activeNav(1)" [class.navigation-item__active]="active == 1"></div></a></li>
-      <li><a href="#sectionTwo"><div class="navigation-item" (click)="activeNav(2)" [class.navigation-item__active]="active == 2"></div></a></li>
-      <li><a href="#sectionThree"><div class="navigation-item" (click)="activeNav(3)" [class.navigation-item__active]="active == 3"></div></a></li>
-      <li><a href="#sectionFour"><div class="navigation-item" (click)="activeNav(4)" [class.navigation-item__active]="active == 4"></div></a></li>
-      <li><a href="#sectionFive"><div class="navigation-item" (click)="activeNav(5)" [class.navigation-item__active]="active == 5"></div></a></li>
-      <li><a href="#sectionSix"><div class="navigation-item" (click)="activeNav(6)" [class.navigation-item__active]="active == 6"></div></a></li>
-      <li><a href="#sectionSeven"><div class="navigation-item" (click)="activeNav(7)" [class.navigation-item__active]="active == 7"></div></a></li>
-      <li><a href="#sectionEight"><div class="navigation-item" (click)="activeNav(8)" [class.navigation-item__active]="active == 8"></div></a></li>
-    </ol>
-  </nav>
+  <ol>
+    <li (click)="navigateToSection(sectionIdEnum.SECTIONONE)">
+      <div class="navigation-item" [class.navigation-item__active]="navigationId == sectionIdEnum.SECTIONONE"></div>
+    </li>
+    <li (click)="navigateToSection(sectionIdEnum.SECTIONTWO)">
+      <div class="navigation-item" [class.navigation-item__active]="navigationId == sectionIdEnum.SECTIONTWO"></div>
+    </li>
+    <li (click)="navigateToSection(sectionIdEnum.SECTIONTHREE)">
+      <div class="navigation-item" [class.navigation-item__active]="navigationId == sectionIdEnum.SECTIONTHREE"></div>
+    </li>
+    <li (click)="navigateToSection(sectionIdEnum.SECTIONFOUR)">
+      <div class="navigation-item" [class.navigation-item__active]="navigationId == sectionIdEnum.SECTIONFOUR"></div>
+    </li>
+  </ol>
+</nav>
